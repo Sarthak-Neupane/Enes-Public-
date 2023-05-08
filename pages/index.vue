@@ -1,32 +1,37 @@
 <template>
-    <div>
-        <div class="relative">
-            <img v-if="width && width < 1024" class="mb-10" src="/images/ImageThree.jpg" alt="">
-            <div class="absolute top-0 left-0 h-full w-full z-10 bg-gradient-to-b from-dark via-transparent to-dark"></div>
-        </div>
-        <div
-            class="relative z-20 -mt-40 flex flex-col justify-center items-start gap-5 text-7xl font-medium lg:mt-10 lg:w-full lg:flex-row lg:justify-center lg:text-[13rem] lg:font-bold">
-            <AnimChar text="ENES" class="text-justify flex justify-center items-center gap-[1px]"> </AnimChar>
-            <AnimChar text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimChar>
-        </div>
-        <div class="my-8 text-sm flex justify-center items-center gap-4 lg:flex-row-reverse" v-if="width >= 1024">
-            <p class="lg:font-medium">Designing And Developing Brands</p>
-            <div class="flex-1 h-[1px] max-h-[1px] bg-light"></div>
-        </div>
-        <div class="mt-7">
-            <h2 class=" text-xl lg:text-2xl lg:font-semibold">Developer From Germany</h2>
-            <p class="mt-3 lg:max-w-md font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-                voluptatum ea eum explicabo eaque dolores pariatur aperiam similique voluptates excepturi?</p>
-        </div>
-    </div>
+    <section class="lg:min-h-screen px-2 lg:px-7 lg:pt-24" ref="hero">
+        <SectionsHero></SectionsHero>
+    </section>
+    <section class="min-h-screen bg-light rounded-t-2xl px-2 lg:px-7 relative" ref="middle">
+        <SectionsMiddleWorks></SectionsMiddleWorks>
+    </section>
 </template>
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
 
 
-const { $gsap: gsap } = useNuxtApp();
+const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const { width } = useWindowSize();
+
+const hero = ref(null)
+const middle = ref(null)
+
+onMounted(() => {
+    ScrollTrigger.create({
+        trigger: hero.value,
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false,
+        markers: true,
+        // scrub: true,
+        onToggle: self => console.log("toggled, isActive:", self.isActive),
+        onUpdate: self => {
+            console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+        }
+    });
+})
 
 </script>

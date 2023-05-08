@@ -1,6 +1,6 @@
 <template>
-    <section class="px-2 lg:px-7 bg-dark text-light">
-        <nav v-if="width && width > 1024" class="py-5 w-full flex justify-end items-center">
+    <section class="bg-dark text-light">
+        <nav v-if="width && width > 1024" class="w-full bg-dark flex justify-end items-center pr-7 h-16 z-50 fixed top-0 left-0">
             <ul class="flex justify-center items-center gap-16 text-md font-medium">
                 <li><a href="/">Projects</a></li>
                 <li><a href="/">About</a></li>

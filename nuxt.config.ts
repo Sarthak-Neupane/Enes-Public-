@@ -19,5 +19,11 @@ export default defineNuxtConfig({
         transpile: ['gsap']
     },
 
-    devServer: {}
+    app:{
+        head:{
+            bodyAttrs: {
+                class: 'bg-dark'
+            }
+        }
+    }
 })
