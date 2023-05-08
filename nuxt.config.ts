@@ -4,6 +4,8 @@ export default defineNuxtConfig({
     modules: [
          '@nuxtjs/tailwindcss',
          '@nuxtjs/google-fonts',
+         '@vueuse/nuxt',
+         'nuxt-icon'
     ],
 
     googleFonts: {
@@ -15,5 +17,7 @@ export default defineNuxtConfig({
 
     build: {
         transpile: ['gsap']
-    }
+    },
+
+    devServer: {}
 })
