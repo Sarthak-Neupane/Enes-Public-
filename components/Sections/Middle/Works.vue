@@ -8,5 +8,8 @@
             <Cards src="/images/imTwo.jpg" name="Project Two" category="Hobby" type="Website" :order="2"></Cards>
             <Cards src="/images/imThree.jpg" name="Project Three" category="Hobby" type="Application" :order="3"></Cards>
         </div>
+        <div class="w-full text-left">
+            <NuxtLink class="text-xl underline-offset-8 underline font-bold" to="/works">See All</NuxtLink>
+        </div>
     </div>
 </template>
