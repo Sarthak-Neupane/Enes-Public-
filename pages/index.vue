@@ -20,17 +20,11 @@ const middle = ref(null)
 
 onMounted(() => {
     ScrollTrigger.create({
-        trigger: hero.value,
-        start: "top top",
-        end: "bottom top",
-        pin: true,
+        trigger: middle.value,
+        start: "top bottom",
+        end: "top top",
+        pin: hero.value,
         pinSpacing: false,
-        markers: true,
-        // scrub: true,
-        onToggle: self => console.log("toggled, isActive:", self.isActive),
-        onUpdate: self => {
-            console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
-        }
     });
 })
 
