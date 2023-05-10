@@ -1,14 +1,14 @@
 <template>
-    <section class="lg:min-h-screen px-2 lg:px-7 lg:pt-24" ref="hero">
+    <section class="lg:min-h-screen px-2 xl:px-7 xl:pt-24" ref="hero">
         <SectionsHero></SectionsHero>
     </section>
-    <section class="min-h-screen bg-light rounded-t-2xl px-2 lg:px-7 relative" ref="middle">
+    <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
         <SectionsMiddleWorks></SectionsMiddleWorks>
     </section>
-    <section class="bg-dark px-2 lg:px-7" ref="lowerMiddle">
+    <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
         <SectionsLowerMiddle></SectionsLowerMiddle>
     </section>
-    <section class="px-2 lg:px-7 bg-light" ref="footer">
+    <section class="px-2 xl:px-7 bg-light" ref="footer">
         <SectionsFooter></SectionsFooter>
     </section>
 </template>
@@ -45,7 +45,7 @@ onMounted(() => {
 
     ScrollTrigger.create({
         trigger: lowerMiddle.value,
-        start: 'top center',
+        start: 'top 80%',
         end: '+=75%',
         animation: uncover,
         scrub: true,

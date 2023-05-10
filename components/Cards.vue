@@ -46,9 +46,10 @@ const props = defineProps({
 
 const getTheOrder = (v)=>{
     if(v === 1){
-        if(props.order % 2 == 0){
+        if(props.order % 2 === 0 ){
             return "justify-end"
-        }else{
+        }
+        else{
             return "justify-start"
         }
     } else if(v === 2){
