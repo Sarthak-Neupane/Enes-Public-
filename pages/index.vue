@@ -1,5 +1,5 @@
 <template>
-    <section class="lg:min-h-screen px-2 xl:px-7 xl:pt-24" ref="hero">
+    <section class="lg:min-h-screen lg:max-h-screen h-[100dvh] flex flex-col justify-end items-start px-2 xl:px-7 pb-12" ref="hero">
         <SectionsHero></SectionsHero>
     </section>
     <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
@@ -35,8 +35,9 @@ onMounted(() => {
     uncover.to(footer.value, { yPercent: 0, ease: 'none' });
 
     ScrollTrigger.create({
-        trigger: middle.value,
-        start: "top bottom",
+        trigger: hero.value,
+        start: "top top",
+        endTrigger: middle.value,
         end: "top top",
         pin: hero.value,
         pinSpacing: false,

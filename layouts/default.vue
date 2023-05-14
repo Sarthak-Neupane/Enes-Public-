@@ -13,7 +13,7 @@
                     <li><a href="/">Contact</a></li>
                 </ul>
             </nav>
-            <nav v-else class="flex justify-end items-center pt-4">
+            <nav v-else class="fixed top-3 right-4">
                 <div>
                     <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
                 </div>
