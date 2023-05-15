@@ -1,5 +1,5 @@
 <template>
-    <div ref="paraSelector">
+    <div ref="paraSelector" class="">
         <slot></slot>
     </div>
 </template>

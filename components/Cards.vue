@@ -1,21 +1,35 @@
 <template>
-    <div class="relative col-span-1 aspect-square rounded-lg">
+    <div class="relative col-span-1 aspect-[3/4] rounded-lg" @mouseenter="mouseenter" @mouseleave="mouseleave">
         <nuxt-img :src="src" class="h-full w-full object-cover rounded-lg" />
         <div
-            class="absolute top-0 w-full h-full l-0 bg-gradient-to-b from-dark via-transparent to-dark p-3 flex flex-col justify-between items-start rounded-lg">
+            class="absolute z-20 top-0 w-full h-full l-0 p-3 flex flex-col justify-between items-start rounded-lg" ref="card">
             <div class="w-full flex items-center" :class="getTheOrder(1)">
                 <button
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md"> {{ category }} </button>
             </div>
             <div class="text-light w-full">
-                <h2 class="text-3xl font-light w-full" :class="getTheOrder(2)">{{ name }}</h2>
-                <p class="font-extralight" :class="getTheOrder(2)"> {{ type }} </p>
+                <h2 class="text-3xl font-light w-full overflow-hidden" :class="getTheOrder(2)">
+                    <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'" :animate="animate">
+                        {{ name }}
+                    </anims-anim-lines>
+                </h2>
+                <p class="font-extralight overflow-hidden" :class="getTheOrder(2)"> 
+                    <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'" :animate="animate">
+                        {{ type }}
+                    </anims-anim-lines>
+                </p>
             </div>
         </div>
+        <div ref="overlay" class=" absolute h-full w-full bg-gradient-to-b from-[rgba(13,13,13,0.5)] via-transparent to-[rgba(13,13,13,0.5)] top-0 left-0 rounded-lg opacity-1 lg:opacity-0"></div>
     </div>
 </template>
 
 <script setup>
+import { useWindowSize } from '@vueuse/core'
+
+
+const { $gsap: gsap } = useNuxtApp();
+
 
 const props = defineProps({
     src: {
@@ -41,8 +55,13 @@ const props = defineProps({
     order: {
         type: Number,
         required: true
-    }
+    },
+
 })
+
+const { width } = useWindowSize();
+
+const overlay = ref(null)
 
 const getTheOrder = (v)=>{
     if(v === 1){
@@ -59,6 +78,29 @@ const getTheOrder = (v)=>{
             return "text-right"
         }
     }
+}
+
+const action = ref(width.value < 768 ? true : false);
+const animate = ref(width.value < 768 ? false : true);
+
+const mouseenter = ()=>{
+    if(width.value < 768) return;
+    gsap.to(overlay.value, {
+        duration: 0.5,
+        opacity: 1,
+        ease: "power2.out"
+    })
+    action.value = true;
+}
+
+const mouseleave = ()=>{
+    if(width.value < 768) return;
+    gsap.to(overlay.value, {
+        duration: 0.5,
+        opacity: 0,
+        ease: "power2.out"
+    })
+    action.value = false;
 }
 
 </script>

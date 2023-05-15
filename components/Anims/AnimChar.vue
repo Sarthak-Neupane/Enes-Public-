@@ -11,19 +11,27 @@ const props = defineProps({
         required: true
     }
 })
+
+const emits = defineEmits(['done'])
+
 const { $gsap: gsap } = useNuxtApp();
 
 const container = ref(null);
 
 onMounted(() => {
-    const t1 = gsap.timeline();
+    const t1 = gsap.timeline({
+
+    });
     const characters = container.value.querySelectorAll('span');
     t1.from(characters, {
         duration: 1,
         y: 100,
         opacity: 0,
         stagger: 0.1,
-        ease: 'power2.out'
+        ease: 'power2.out',
+        onComplete: () => {
+            emits('done')
+        }
     })
 })
 
