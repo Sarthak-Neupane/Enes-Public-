@@ -2,9 +2,9 @@
     <div class="w-full">
         <div
             class="relative z-20 flex flex-col justify-center items-start gap-5 text-7xl font-medium lg:mt-0 lg:w-full lg:flex-row lg:justify-center lg:text-[13rem] lg:font-bold">
-            <AnimsAnimChar text="ENES" class="text-justify flex justify-center items-center gap-[1px]"
+            <AnimsAnimChar :play="play" text="ENES" class="text-justify flex justify-center items-center gap-[1px]"
                 @done="revealOtherAnims"> </AnimsAnimChar>
-            <AnimsAnimChar text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
+            <AnimsAnimChar :play="play" text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
         </div>
         <div class="my-8 text-sm relative flex justify-start" ref="group">
             <p class="lg:font-medium absolute bg-dark px-3 top-0 right-0 -translate-y-1/2 overflow-hidden" ref="movingText">
@@ -59,6 +59,7 @@ import { useWindowSize } from '@vueuse/core';
 
 const { $gsap: gsap, $Flip: Flip } = useNuxtApp();
 
+const play = ref(false)
 const action = ref(false)
 
 const movingText = ref()
@@ -91,6 +92,10 @@ const revealOtherAnims = () => {
 
     // action.value = true
 }
+
+onMounted(()=>{
+    play.value = true
+})
 
 </script>
 

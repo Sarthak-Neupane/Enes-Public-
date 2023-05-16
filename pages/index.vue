@@ -46,7 +46,7 @@ onMounted(() => {
 
     ScrollTrigger.create({
         trigger: lowerMiddle.value,
-        start: 'top 80%',
+        start: 'top 75%',
         end: '+=75%',
         animation: uncover,
         scrub: true,
