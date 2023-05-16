@@ -12,7 +12,7 @@
         </div>
         <div
             class="mt-8 lg:mt-14 w-full flex justify-center items-start flex-col lg:flex-row lg:justify-between gap-4 lg:items-end">
-            <ul class="text-left">
+            <ul class="text-left flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
                     <a href="https://www.instagram.com">
@@ -39,7 +39,7 @@
                 <li>Address</li>
                 <li>Phone</li>
             </ul>
-            <div class="opacity-0">
+            <div class="text-xs w-full text-right lg:w-max">
                 created by Sarthak Neupane
             </div>
         </div>

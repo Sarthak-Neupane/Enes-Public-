@@ -1,11 +1,11 @@
 <template>
     <div class="text-dark py-10 px-2">
         <div>
-            <h1 class="text-4xl font-light w-[12rem]">Featured Works</h1>
+            <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]">Featured Works</h1>
         </div>
         <div class="my-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
             <Cards src="/images/imOne.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)"></Cards>
-            <Cards src="/images/imTwo.jpg" name="Project Two" category="Hobby" type="Website" :order="getOrder(2)"></Cards>
+            <Cards src="/images/imTwo.jpg" name="Project Two" category="Tech" type="Website" :order="getOrder(2)"></Cards>
             <Cards src="/images/imThree.jpg" name="Project Three" category="Hobby" type="Application" :order="getOrder(3)">
             </Cards>
         </div>
