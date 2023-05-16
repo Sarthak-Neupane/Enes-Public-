@@ -32,7 +32,7 @@ const props = defineProps({
     },
     trigger: {
         type: Object,
-        required: true
+        // required: true
     },
     animate: {
         type: Boolean,

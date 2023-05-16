@@ -5,9 +5,13 @@
             <AnimsAnimChar text="ENES" class="text-justify flex justify-center items-center gap-[1px]" @done="revealOtherAnims"> </AnimsAnimChar>
             <AnimsAnimChar text="YÜKSEK" class="flex justify-center items-center gap-[1px]" > </AnimsAnimChar>
         </div>
-        <div class="my-8 text-sm flex justify-center items-center gap-4 flex-row-reverse">
-            <p class="lg:font-medium">Designing And Developing Brands</p>
-            <div class="flex-1 h-[1px] max-h-[1px] bg-light w-full"></div>
+        <div class="my-8 text-sm relative flex justify-start" ref="group">
+            <p class="lg:font-medium absolute bg-dark px-3 top-0 right-0 -translate-y-1/2 overflow-hidden" ref="movingText">
+                <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100" :animate="true"  >
+                Designing and Developing Brands
+            </AnimsAnimLines>
+            </p>
+            <div class="h-[1px] max-h-[1px] bg-light w-0" ref="line"></div>
         </div>
     </div>
     <div class="xl:my-10 xl:pb-10">
@@ -42,14 +46,52 @@
 <script setup>
 import { useWindowSize } from '@vueuse/core';
 
-const { $gsap: gsap } = useNuxtApp();
+const { $gsap: gsap, $Flip: Flip } = useNuxtApp();
 
 const action = ref(false)
+
+const movingText = ref()
+const group = ref()
+const line = ref()
+
+
+const getTranslatePercent = () => {
+    const translatePercent = ((group.value.offsetWidth) / (movingText.value.offsetWidth) * 100) - 99
+    return translatePercent
+}
+
+const getLineWidth = () => {
+    const lineWidth = (((group.value.offsetWidth) - (line.value.offsetWidth)))
+    return lineWidth
+}
 
 const { width } = useWindowSize();
 
 const revealOtherAnims = () => {
-    action.value = true
+
+    const t1= gsap.timeline({
+        onUpdate : () => {
+            if (t1.progress() > 0.4) {
+                action.value = true
+            }
+        }
+    })
+
+    t1.to(line.value, {
+        width: getLineWidth,
+        duration: 1.5,
+        ease: 'power2.out'
+    })
+
+    // action.value = true
 }
 
 </script>
+
+<style scoped>
+
+.theGroup.reorder{
+    flex-direction: row-reverse !important;
+}
+
+</style>
