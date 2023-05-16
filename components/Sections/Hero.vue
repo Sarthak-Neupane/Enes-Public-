@@ -31,7 +31,7 @@
             </AnimsAnimLines>
         </p>
         <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
-            :action="action" :duration="2" :animate="true">
+            :action="action" :duration="2" :animate="true" cursor-type="cursor-pointer" >
             Request A Project
         </AnimsAnimButton>
     </div>
@@ -40,12 +40,12 @@
         class="w-full absolute right-4 bottom-4 flex justify-start lg:justify-end items-center">
         <ul class="flex flex-col gap-3 font-semibold">
             <li>
-                <AnimsAnimButton :action="action" :duration="2" :animate="true"
+                <AnimsAnimButton cursor-type="cursor-default" :action="action" :duration="2" :animate="true"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">From
                     Germany</AnimsAnimButton>
             </li>
             <li>
-                <AnimsAnimButton :action="action" :duration="2" :animate="true"
+                <AnimsAnimButton cursor-type="cursor-default" :action="action" :duration="2" :animate="true"
                     class="border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">
                     Available
                     for freelance</AnimsAnimButton>
@@ -56,8 +56,11 @@
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
+import { useHeroAnimStore } from '~/store/heroAnim';
 
 const { $gsap: gsap, $Flip: Flip } = useNuxtApp();
+
+const animStore = useHeroAnimStore()
 
 const play = ref(false)
 const action = ref(false)
@@ -77,28 +80,23 @@ const { width } = useWindowSize();
 const revealOtherAnims = () => {
 
     const t1 = gsap.timeline({
-        onUpdate: () => {
-            if (t1.progress() > 0.4) {
-                action.value = true
-            }
+        onComplete: () => {
+            animStore.setAnimating(false)
+            action.value = true
         }
     })
 
     t1.to(line.value, {
         width: getLineWidth,
         duration: 1.5,
-        ease: 'power2.out'
+        ease: 'expo.in'
     })
-
-    // action.value = true
 }
+
+
 
 onMounted(()=>{
     play.value = true
 })
 
 </script>
-
-<style scoped>.theGroup.reorder {
-    flex-direction: row-reverse !important;
-}</style>

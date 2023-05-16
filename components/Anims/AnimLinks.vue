@@ -1,5 +1,5 @@
 <template>
-    <div ref="container">
+    <div ref="container" class="pointer-events-none">
         <span v-for="char in text" class="translate-y-0 inline-block" :class="getClass">{{ char }}</span>
     </div>
 </template>

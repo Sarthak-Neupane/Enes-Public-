@@ -10,11 +10,8 @@
             </Cards>
         </div>
         <div class="w-fit text-left">
-            <NuxtLink to="/">
-                <div data-action="action" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                    class="w-fit px-1 py-1 text-xl font-bold">
-                    <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
-            </div>
+            <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter" class="w-fit px-1 py-1 text-xl font-bold">
+                <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>
     </div>
@@ -36,6 +33,9 @@ const getOrder = (v) => {
 const action = ref(false)
 
 const mouseenter = () => {
+    if (width.value < 1024) {
+        return
+    }
     action.value = true
 }
 

@@ -28,10 +28,10 @@ watch(() => props.play, (newVal, oldVal) => {
         const characters = container.value.querySelectorAll('span');
         t1.from(characters, {
             duration: 1,
-            y: 100,
+            y: 250,
             opacity: 0,
             stagger: 0.1,
-            ease: 'power2.out',
+            ease: 'back.out(1.7)',
             onComplete: () => {
                 emits('done')
             }

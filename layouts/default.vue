@@ -6,7 +6,7 @@
                 <a href="/">About</a>
                 <a href="/">Contact</a>
             </template>
-            <nav v-if="width && width > 1024" class="w-full bg-transparent mix-blend-difference flex justify-end items-center  pr-7 h-16 z-50 fixed top-0 left-0">
+            <nav ref="nav" v-if="width && width > 1024" class="opacity-0 w-full bg-transparent mix-blend-difference flex justify-end items-center  pr-7 h-16 z-50 fixed top-0 left-0">
                 <ul class="flex justify-center items-center gap-16 text-md font-medium ">
                     <NuxtLink to="/">
                         <li data-action="action1"  @mouseenter="mouseenter" @mouseleave="mouseleave" class="flex justify-center items-center gap-3">
@@ -25,25 +25,36 @@
                     </NuxtLink>
                 </ul>
             </nav>
-            <nav v-else class="fixed z-[100] top-3 right-4 mix-blend-difference">
+            <nav ref="nav" v-else class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
                 <div class="">
                     <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
                 </div>
             </nav>
         </ClientOnly>
-        <slot></slot>
+        <slot ></slot>
     </section>
 </template>
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
+import { useHeroAnimStore } from '~/store/heroAnim';
+import { storeToRefs } from 'pinia';
+
 const { width } = useWindowSize();
+
+const { $gsap: gsap } = useNuxtApp();
 
 const action1 = ref(false)
 const action2 = ref(false)
 const action3 = ref(false)
 
+const nav = ref()
+
 const mountedValue = ref(false)
+
+const animStore = useHeroAnimStore()
+
+const { animating } = storeToRefs(animStore)
 
 onMounted(()=>{
     mountedValue.value = true
@@ -74,4 +85,15 @@ const completeAnim = (v) => {
     console.log(v)
     switchActions(v, false)
 }
+
+watch(animating, (v)=>{
+    if(v === false){
+        gsap.to(nav.value, {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out'
+        })
+    }
+})
+
 </script>
