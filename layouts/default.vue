@@ -1,5 +1,6 @@
 <template>
-    <section class="bg-dark text-light" v-if="mountedValue">
+    <section class="bg-dark text-light cursor-none" v-if="mountedValue" @mousemove="mousemove">
+        <Cursor :x="mouseX" :y="mouseY"></Cursor>
         <ClientOnly>
             <template #fallback>
                 <a href="/">Projects</a>
@@ -47,6 +48,9 @@ const { $gsap: gsap } = useNuxtApp();
 const action1 = ref(false)
 const action2 = ref(false)
 const action3 = ref(false)
+
+const mouseX = ref(0)
+const mouseY = ref(0)
 
 const nav = ref()
 
@@ -96,4 +100,8 @@ watch(animating, (v)=>{
     }
 })
 
+const mousemove = (e) => {
+    mouseX.value = e.clientX
+    mouseY.value = e.clientY
+}
 </script>

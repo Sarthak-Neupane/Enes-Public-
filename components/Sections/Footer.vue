@@ -1,5 +1,5 @@
 <template>
-    <div class="text-dark px-2 pb-4">
+    <div class="text-dark px-2 pb-4 ">
         <div class="pt-4">
             <div class="my-4">
                 <h1 class="font-semibold text-5xl lg:text-4xl break-words">Let's Build Together</h1>
@@ -15,21 +15,21 @@
             <ul class="text-left flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.instagram.com">
+                    <a href="https://www.instagram.com" class="cursor-none">
                         <AnimsAnimLinks text="Instagram" :action="instagram" @done="completeAnim('instagram')">
                         </AnimsAnimLinks>
                     </a>
                 </li>
                 <li data-action="twitter" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.twitter.com">
+                    <a href="https://www.twitter.com" class="cursor-none">
                         <AnimsAnimLinks text="Twitter" :action="twitter" @done="completeAnim('twitter')">
                         </AnimsAnimLinks>
                     </a>
                 </li>
                 <li data-action="github" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.github.com">
+                    <a href="https://www.github.com" class="cursor-none">
                         <AnimsAnimLinks text="Github" :action="github" @done="completeAnim('github')">
                         </AnimsAnimLinks>
                     </a>

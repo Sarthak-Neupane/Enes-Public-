@@ -4,7 +4,7 @@
         <div class="absolute z-20 top-0 w-full h-full l-0 p-3 flex flex-col justify-between items-start rounded-lg"
             ref="card">
             <div class="w-full flex items-center" :class="getTheOrder(1)">
-                <AnimsAnimButton :action="action" :duration="1" :animate="animate" cursorType="cursor-default"
+                <AnimsAnimButton :action="action" :duration="1" :animate="animate" cursorType="cursor-none"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">
                     {{ category }}
                 </AnimsAnimButton>

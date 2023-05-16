@@ -4,13 +4,19 @@
             <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]">Featured Works</h1>
         </div>
         <div class="my-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <Cards src="/images/imOne.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)"></Cards>
-            <Cards src="/images/imTwo.jpg" name="Project Two" category="Tech" type="Website" :order="getOrder(2)"></Cards>
-            <Cards src="/images/imThree.jpg" name="Project Three" category="Hobby" type="Application" :order="getOrder(3)">
-            </Cards>
+            <NuxtLink to="/works" class="cursor-none" >
+                <Cards src="/images/imOne.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)"></Cards>
+            </NuxtLink>
+            <NuxtLink to="/works" class="cursor-none">
+                <Cards src="/images/imTwo.jpg" name="Project Two" category="Tech" type="Website" :order="getOrder(2)"></Cards>
+            </NuxtLink>
+            <NuxtLink to="/works" class="cursor-none">
+                <Cards src="/images/imThree.jpg" name="Project Three" category="Hobby" type="Application" :order="getOrder(3)">
+                </Cards>
+            </NuxtLink>
         </div>
         <div class="w-fit text-left">
-            <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter" class="w-fit px-1 py-1 text-xl font-bold">
+            <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter" class="w-fit px-1 py-1 text-xl font-bold cursor-none">
                 <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>
