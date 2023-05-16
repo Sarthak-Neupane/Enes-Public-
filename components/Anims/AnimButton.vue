@@ -1,5 +1,5 @@
 <template>
-    <button class="opacity-0" ref="button">
+    <button :class="getClass" ref="button">
             <slot></slot>
     </button>
 </template>
@@ -13,6 +13,10 @@ const props = defineProps({
     },
     duration: {
         type: Number,
+    },
+    animate: {
+        type: Boolean,
+        default: false
     }
 })
 
@@ -27,6 +31,20 @@ watch(() => props.action, (newVal, oldVal) => {
             duration: props.duration,
             ease: 'power2.out'
         })
+    } else {
+        gsap.to(button.value, {
+            opacity: 0,
+            duration: props.duration,
+            ease: 'power2.out'
+        })
+    }
+})
+
+const getClass = computed(()=>{
+    if(props.animate){
+        return "opacity-0"
+    }else{
+        return ""
     }
 })
 

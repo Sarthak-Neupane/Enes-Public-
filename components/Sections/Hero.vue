@@ -31,7 +31,7 @@
             </AnimsAnimLines>
         </p>
         <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
-            :action="action" :duration="2">
+            :action="action" :duration="2" :animate="true">
             Request A Project
         </AnimsAnimButton>
     </div>
@@ -40,12 +40,12 @@
         class="w-full absolute right-4 bottom-4 flex justify-start lg:justify-end items-center">
         <ul class="flex flex-col gap-3 font-semibold">
             <li>
-                <AnimsAnimButton :action="action" :duration="2"
+                <AnimsAnimButton :action="action" :duration="2" :animate="true"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">From
                     Germany</AnimsAnimButton>
             </li>
             <li>
-                <AnimsAnimButton :action="action" :duration="2"
+                <AnimsAnimButton :action="action" :duration="2" :animate="true"
                     class="border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">
                     Available
                     for freelance</AnimsAnimButton>
