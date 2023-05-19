@@ -42,7 +42,11 @@ const props = defineProps({
 
 const returnClass = computed(()=>{
     if(props.animate){
-        return "translate-y-full"
+        if(props.yPercent === 0){
+            return "translate-y-0"
+        } else {
+            return "translate-y-full"
+        }
     } else {
         return "translate-y-0"
     }

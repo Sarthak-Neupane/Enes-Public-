@@ -10,7 +10,7 @@
         <div>
             <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]">Featured Works</h1>
         </div>
-        <div class="my-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div class="my-8 grid grid-cols-1 lg:grid-cols-3 gap-4">    
             <NuxtLink to="/works" class="cursor-none" >
                 <Cards src="/images/imOne.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)" @change="changeIcon" @default="defaultIcon">
                 </Cards>
