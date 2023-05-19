@@ -6,9 +6,9 @@
         zIndex: 'z-50',
         mixBlend: 'mix-blend-difference'
     })" 
-    >
-        <div>
-            <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]">Featured Works</h1>
+    ref="container">
+        <div class="overflow-hidden">
+            <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]" id="Headline_Work">Featured Works</h1>
         </div>
         <div class="my-8 grid grid-cols-1 lg:grid-cols-3 gap-4">    
             <NuxtLink to="/works" class="cursor-none" >
@@ -38,6 +38,8 @@
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
+
+const { $gsap: gsap } = useNuxtApp();
 
 const emits = defineEmits(['change', 'default'])
 
@@ -70,5 +72,34 @@ const changeIcon = (v) => {
 const defaultIcon = (v)=>{
     emits('default', v)
 }
+
+const container = ref()
+
+const ctx = ref()
+
+onMounted(()=>{
+    ctx.value = gsap.context((self)=>{
+        const Headline_Work = self.selector('#Headline_Work')
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.value,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        })
+
+        tl.fromTo(Headline_Work, {
+            opacity: 0,
+            y: 100
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power4.out'
+        })
+
+    }, container.value)
+})
 
 </script>

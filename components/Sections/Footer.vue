@@ -4,18 +4,18 @@
         size: '30px',
         color: '',
         zIndex: 'z-50'
-    })">
+    })" ref="container">
         <div class="pt-4">
-            <div class="my-4">
-                <h1 class="font-semibold text-5xl lg:text-4xl break-words">Let's Build Together</h1>
+            <div class="my-4 py-2 overflow-hidden">
+                <h1 class="font-semibold text-5xl lg:text-4xl break-words" id="Headline_Contact">Let's Build Together</h1>
             </div>
-            <div class="">
+            <div class="overflow-hidden">
                 <h1
-                    class="text-3xl lg:my-8 lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words">
+                    class="text-3xl lg:my-8 lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words" id="Headline_Mail">
                     hello@loremgmail.com</h1>
             </div>
         </div>
-        <div
+        <div id="Footer_Contact"
             class="mt-8 lg:mt-14 w-full flex justify-center items-start flex-col lg:flex-row lg:justify-between gap-4 lg:items-end">
             <ul class="text-left z-50 relative flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
@@ -105,6 +105,8 @@ const switchActions = (action, value) => {
     }
 }
 
+const ctx = ref()
+
 const mouseenter = (e) => {
     const action = e.target.dataset.action
     switchActions(action, true)
@@ -123,4 +125,42 @@ const mouseleave = (e) => {
         mixBlend: 'mix-blend-difference'
     })
 }
+
+const container = ref()
+
+onMounted(()=>{
+    ctx.value = gsap.context((self)=>{
+        const headlineContact = self.selector('#Headline_Contact')
+        const headlineMail = self.selector('#Headline_Mail')
+        const footerContact = self.selector('#Footer_Contact')
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.value,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        })
+
+        tl.from([headlineContact], {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.out'
+        })
+        .from([headlineMail], {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.out'
+        }, '-=0.7')
+        .from([footerContact], {
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.out'
+        }, '-=0.5')
+
+    }, container.value)
+})
+
 </script>
