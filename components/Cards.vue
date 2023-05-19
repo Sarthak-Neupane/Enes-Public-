@@ -35,6 +35,8 @@ import { useWindowSize } from '@vueuse/core'
 
 const { $gsap: gsap } = useNuxtApp();
 
+const emits = defineEmits(['change', 'default'])
+
 
 const props = defineProps({
     src: {
@@ -90,16 +92,31 @@ const animate = ref(width.value < 768 ? false : true);
 
 const mouseenter = () => {
     if (width.value < 768) return;
+    emits('change', {
+            icon: 'line-md:arrow-small-right',
+            size: '40px',
+            color: 'text-light',
+            zIndex: 'z-50',
+            addedClass: ''
+    });
     gsap.to(overlay.value, {
         duration: 0.5,
         opacity: 1,
         ease: "power2.out"
     })
     action.value = true;
+
 }
 
 const mouseleave = () => {
     if (width.value < 768) return;
+    emits('default', {
+            icon: 'radix-icons:dot-filled',
+            size: '30px',
+            color: 'text-dark',
+            zIndex: 'z-50',
+            addedClass: ''  
+    })
     gsap.to(overlay.value, {
         duration: 0.5,
         opacity: 0,

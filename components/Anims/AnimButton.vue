@@ -1,6 +1,6 @@
 <template>
     <button :class="[getClass, cursorType]" ref="button" class="relative" @mouseenter="mouseenter" @mouseleave="mouseleave">
-        <div class="border-[1px] border-solid border-light absolute origin-left scale-x-0 w-full h-full bg-light top-0 left-0 rounded-md mix-blend-difference" ref="background"></div>
+        <div class=" pointer-events-none border-[1px] border-solid border-light absolute origin-left scale-x-0 w-full h-full bg-light top-0 left-0 rounded-md mix-blend-difference" ref="background"></div>
         <slot></slot>
     </button>
 </template>

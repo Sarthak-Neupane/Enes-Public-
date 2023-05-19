@@ -1,25 +1,34 @@
 <template>
     <section class="min-h-screen max-h-screen h-screen flex flex-col justify-end items-start px-2 xl:px-7 pb-12" ref="hero">
-        <SectionsHero></SectionsHero>
+        <SectionsHero @change="emitIconChange" @default="emitIconDefault" ></SectionsHero>
     </section>
     <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
-        <SectionsMiddleWorks></SectionsMiddleWorks>
+        <SectionsMiddleWorks @change="emitIconChange" @default="emitIconDefault"></SectionsMiddleWorks>
     </section>
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
-        <SectionsLowerMiddle></SectionsLowerMiddle>
+        <SectionsLowerMiddle @change="emitIconChange" @default="emitIconDefault"></SectionsLowerMiddle>
     </section>
     <section class="px-2 xl:px-7 bg-light" ref="footer">
-        <SectionsFooter></SectionsFooter>
+        <SectionsFooter @change="emitIconChange" @default="emitIconDefault"></SectionsFooter>
     </section>
 </template>
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
 
-
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const { width } = useWindowSize();
+
+const emits = defineEmits(['change', 'default'])
+
+const emitIconChange = (data) => {
+    emits('change', data)
+}
+
+const emitIconDefault = (v) => {
+    emits('default', v)
+}
 
 const hero = ref(null)
 const middle = ref(null)
@@ -28,11 +37,10 @@ const footer = ref(null)
 
 const uncover = gsap.timeline({ paused: true })
 
-
 onMounted(() => {
 
-    gsap.set(footer.value, { yPercent: 100 })
-    uncover.to(footer.value, { yPercent: 0, ease: 'none' });
+    // gsap.set(footer.value, { yPercent: 100 })
+    // uncover.to(footer.value, { yPercent: 0, ease: 'none' });
 
     ScrollTrigger.create({
         trigger: hero.value,
@@ -44,13 +52,29 @@ onMounted(() => {
         scrub: true,
     });
 
-    ScrollTrigger.create({
-        trigger: lowerMiddle.value,
-        start: 'top 75%',
-        end: '+=75%',
-        animation: uncover,
-        scrub: true,
-    })
+    // ScrollTrigger.create({
+    //     trigger: lowerMiddle.value,
+    //     start: 'top 70%',
+    //     end: '+=75%',
+    //     animation: uncover,
+    //     scrub: true,
+    // })
+
+    // gsap.to(".panel:not(:last-child)", {
+    //     yPercent: -100,
+    //     ease: "none",
+    //     stagger: 0.5,
+    //     scrollTrigger: {
+    //         trigger: "#container",
+    //         start: "top top",
+    //         end: "+=300%",
+    //         scrub: true,
+    //         pin: true
+    //     }
+    // });
+
+
+    // gsap.set(".panel", { zIndex: (i, target, targets) => targets.length - i });
 })
 
 </script>

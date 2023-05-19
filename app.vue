@@ -1,12 +1,6 @@
 <template>
-    <section class="bg-dark text-light cursor-none" v-if="mountedValue" @mousemove="mousemove">
-        <Cursor :x="mouseX" :y="mouseY"></Cursor>
-        <ClientOnly>
-            <template #fallback>
-                <a href="/">Projects</a>
-                <a href="/">About</a>
-                <a href="/">Contact</a>
-            </template>
+    <section class="bg-dark text-light cursor-none" v-if="mountedValue" @mousemove="mousemove" @mouseenter="mouseenterSection">
+        <CursorParent v-if="width > 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex" :color="color" :added-class="addedClass" ></CursorParent>
             <nav ref="nav" v-if="width && width > 1024" class="opacity-0 w-full bg-transparent mix-blend-difference flex justify-end items-center  pr-7 h-16 z-50 fixed top-0 left-0">
                 <ul class="flex justify-center items-center gap-16 text-md font-medium ">
                     <NuxtLink to="/">
@@ -31,8 +25,7 @@
                     <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
                 </div>
             </nav>
-        </ClientOnly>
-        <slot ></slot>
+        <NuxtPage @change="changeIcon" @default="defaultIcon" />
     </section>
 </template>
 
@@ -53,6 +46,13 @@ const mouseX = ref(0)
 const mouseY = ref(0)
 
 const nav = ref()
+
+const icon = ref("radix-icons:dot-filled")
+const size = ref("30px")
+const color = ref("text-light")
+const zIndex = ref('z-50')
+const addedClass = ref('')
+
 
 const mountedValue = ref(false)
 
@@ -104,4 +104,26 @@ const mousemove = (e) => {
     mouseX.value = e.clientX
     mouseY.value = e.clientY
 }
+
+const defaultIcon = (v)=>{
+    console.log(v)
+    icon.value = v ? v.icon : 'radix-icons:dot-filled'
+    size.value = v ? v.size : '30px'
+    zIndex.value = v ? v.zIndex : 'z-50'
+    color.value = v ? v.color : 'text-light'
+}
+
+const changeIcon = (v)=>{
+    icon.value = v.icon
+    size.value = v.size
+    zIndex.value = v.zIndex
+    color.value = v.color
+    addedClass.value = v.addedClass ? v.addedClass : ''
+}   
+
+const mouseenterSection = (e) => {
+    console.log('entered section')
+    defaultIcon()
+}
+
 </script>

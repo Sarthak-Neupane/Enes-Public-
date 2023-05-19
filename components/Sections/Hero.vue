@@ -16,7 +16,7 @@
             <div class="h-[1px] max-h-[1px] bg-light w-0" ref="line"></div>
         </div>
     </div>
-    <div class="xl:my-10 xl:pb-10">
+    <div class="xl:my-10 xl:pb-10 z-50">
         <h2 class=" text-xl lg:text-2xl lg:font-semibold overflow-y-hidden">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
@@ -30,23 +30,46 @@
                 voluptatum ea eum explicabo eaque dolores pariatur aperiam similique voluptates excepturi?
             </AnimsAnimLines>
         </p>
-        <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
-            :action="action" :duration="2" :animate="true" cursor-type="cursor-none" >
-            Request A Project
-        </AnimsAnimButton>
+        <NuxtLink to="/works" >
+            <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
+                :action="action" :duration="2" :animate="true" cursor-type="cursor-none" @mouseenter="$emit('change', {
+                    icon: 'line-md:arrow-small-right',
+                    size: '30px',
+                    color: 'text-dark',
+                    zIndex: 'z-10',
+                    addedClass: ''
+                })" 
+                @mouseleave="$emit('default', {})">
+                Request A Project
+            </AnimsAnimButton>
+        </NuxtLink>
     </div>
 
     <div v-if="width && width > 1024"
         class="w-full absolute right-4 bottom-4 flex justify-start lg:justify-end items-center">
         <ul class="flex flex-col gap-3 font-semibold">
             <li>
-                <AnimsAnimButton cursor-type="cursor-none" :action="action" :duration="2" :animate="true"
+                <AnimsAnimButton cursor-type="cursor-none" :action="action" :duration="2" :animate="true" @mouseenter="$emit('change', {
+                    icon: 'radix-icons:dot-filled',
+                    size: '30px',
+                    color: 'text-light',
+                    zIndex: 'z-10',
+                    addedClass: 'mix-blend-difference'
+                })" 
+                @mouseleave="$emit('default', {})"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">From
                     Germany</AnimsAnimButton>
             </li>
             <li>
                 <AnimsAnimButton cursor-type="cursor-none" :action="action" :duration="2" :animate="true"
-                    class="border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">
+                    class="border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md" @mouseenter="$emit('change', {
+                    icon: 'radix-icons:dot-filled',
+                    size: '30px',
+                    color: 'text-light',
+                    zIndex: 'z-10',
+                    addedClass: 'mix-blend-difference'
+                })" 
+                @mouseleave="$emit('default', {})">
                     Available
                     for freelance</AnimsAnimButton>
             </li>
@@ -68,6 +91,16 @@ const action = ref(false)
 const movingText = ref()
 const group = ref()
 const line = ref()
+
+const emits = defineEmits(['change', 'default'])
+
+const enterHover = ()=>{
+    emits('change', {
+                Icon: 'material-symbols:send-rounded',
+                size: '30px',
+                color: 'text-dark'
+            })
+}
 
 
 const getLineWidth = () => {
@@ -92,8 +125,6 @@ const revealOtherAnims = () => {
         ease: 'expo.in'
     })
 }
-
-
 
 onMounted(()=>{
     play.value = true
