@@ -1,5 +1,6 @@
 <template>
-    <div ref="cursor" class="pointer-events-none fixed" :class="[zIndex, addedClass]">
+    <div ref="cursor" class="pointer-events-none fixed"
+        :class="[zIndex, mixBlend]">
         <div class="h-full w-full">
             <!-- <Icon name="material-symbols:send-rounded" size="30px" v-if="cursorNumber === 1" /> -->
             <!-- <Icon name="line-md:github-twotone" size="30px" v-else-if="cursorNumber === 2" class="text-dark" /> -->
@@ -21,7 +22,7 @@ const props = defineProps({
         type: Number,
         default: 0
     },
-    zIndex : {
+    zIndex: {
         type: String,
         default: 'z-50'
     },
@@ -37,10 +38,9 @@ const props = defineProps({
         type: String,
         default: 'text-light'
     },
-    addedClass: {
+    mixBlend: {
         type: String,
-        required: false,
-        default: ''
+        default: 'mix-blend-difference'
     }
 })
 

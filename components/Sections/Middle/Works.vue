@@ -2,15 +2,10 @@
     <div class="text-dark py-10 px-2" @mouseenter="$emit('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: 'text-dark',
-        zIndex: 'z-50'
+        color: '',
+        zIndex: 'z-50',
+        mixBlend: 'mix-blend-difference'
     })" 
-    @mouseleave="$emit('default', {
-        icon: 'radix-icons:dot-filled',
-        size: '30px',
-        color: 'text-light',
-        zIndex: 'z-50'
-    })"
     >
         <div>
             <h1 class="text-4xl font-light md:font-semibold lg:w-full w-[12rem]">Featured Works</h1>

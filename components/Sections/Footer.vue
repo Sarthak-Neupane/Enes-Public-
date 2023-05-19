@@ -2,7 +2,7 @@
     <div class="text-dark px-2 pb-4" @mouseenter="$emit('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: 'text-dark',
+        color: '',
         zIndex: 'z-50'
     })">
         <div class="pt-4">
@@ -69,8 +69,9 @@ const switchActions = (action, value) => {
                 emits('change', {
                     icon: 'skill-icons:instagram',
                     size: '20px',
-                    color: '',
-                    zIndex: 'z-10'
+                    color: 'text-dark',
+                    zIndex: 'z-10',
+                    mixBlend: 'mix-blend-normal'
                 })
             }
             instagram.value = value
@@ -80,8 +81,9 @@ const switchActions = (action, value) => {
                     emits('change', {
                         icon: 'skill-icons:twitter',
                         size: '20px',
-                        color: '',
-                        zIndex: 'z-10'
+                        color: 'text-dark',
+                        zIndex: 'z-10',
+                        mixBlend: 'mix-blend-normal'
                     })
                 }
                 twitter.value = value
@@ -91,8 +93,9 @@ const switchActions = (action, value) => {
                 emits('change', {   
                         icon: 'skill-icons:github-light',
                         size: '20px',
-                        color: '',
-                        zIndex: 'z-10'
+                        color: 'text-dark',
+                        zIndex: 'z-10',
+                        mixBlend: 'mix-blend-normal'
                     })
             }
             github.value = value
@@ -108,7 +111,6 @@ const mouseenter = (e) => {
 }
 
 const completeAnim = (v) => {
-    console.log(v)
     switchActions(v, false)
 }
 
@@ -116,8 +118,9 @@ const mouseleave = (e) => {
     emits('default', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: 'text-dark',
-        zIndex: 'z-50'
+        color: '',
+        zIndex: 'z-50',
+        mixBlend: 'mix-blend-difference'
     })
 }
 </script>

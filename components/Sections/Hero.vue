@@ -33,11 +33,11 @@
         <NuxtLink to="/works" >
             <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
                 :action="action" :duration="2" :animate="true" cursor-type="cursor-none" @mouseenter="$emit('change', {
-                    icon: 'line-md:arrow-small-right',
+                    icon: 'vaadin:paperplane',
                     size: '30px',
                     color: 'text-dark',
-                    zIndex: 'z-10',
-                    addedClass: ''
+                    zIndex: 'z-50', 
+                    mixBlend: 'mix-blend-normal'
                 })" 
                 @mouseleave="$emit('default', {})">
                 Request A Project
@@ -54,7 +54,7 @@
                     size: '30px',
                     color: 'text-light',
                     zIndex: 'z-10',
-                    addedClass: 'mix-blend-difference'
+                    mixBlend: 'mix-blend-difference'
                 })" 
                 @mouseleave="$emit('default', {})"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">From
@@ -67,7 +67,7 @@
                     size: '30px',
                     color: 'text-light',
                     zIndex: 'z-10',
-                    addedClass: 'mix-blend-difference'
+                    mixBlend: 'mix-blend-difference'
                 })" 
                 @mouseleave="$emit('default', {})">
                     Available
@@ -93,15 +93,6 @@ const group = ref()
 const line = ref()
 
 const emits = defineEmits(['change', 'default'])
-
-const enterHover = ()=>{
-    emits('change', {
-                Icon: 'material-symbols:send-rounded',
-                size: '30px',
-                color: 'text-dark'
-            })
-}
-
 
 const getLineWidth = () => {
     const lineWidth = (((group.value.offsetWidth) - (line.value.offsetWidth)))

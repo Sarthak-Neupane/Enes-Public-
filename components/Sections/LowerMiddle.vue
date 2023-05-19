@@ -2,7 +2,7 @@
     <div class="text-light w-full px-2 flex justify-center items-start flex-col pb-5" @mouseenter="$emit('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: 'text-light',
+        color: '',
         zIndex: 'z-50'
     })">
         <p class="py-10 text-2xl xl:text-4xl">

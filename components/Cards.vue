@@ -93,11 +93,11 @@ const animate = ref(width.value < 768 ? false : true);
 const mouseenter = () => {
     if (width.value < 768) return;
     emits('change', {
-            icon: 'line-md:arrow-small-right',
+            icon: 'vaadin:paperplane',
             size: '40px',
-            color: 'text-light',
+            color: '',
             zIndex: 'z-50',
-            addedClass: ''
+            mixBlend: 'mix-blend-normal'
     });
     gsap.to(overlay.value, {
         duration: 0.5,
@@ -113,9 +113,9 @@ const mouseleave = () => {
     emits('default', {
             icon: 'radix-icons:dot-filled',
             size: '30px',
-            color: 'text-dark',
+            color: '',
             zIndex: 'z-50',
-            addedClass: ''  
+            removeMixBlend: false
     })
     gsap.to(overlay.value, {
         duration: 0.5,
