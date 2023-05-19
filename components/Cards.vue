@@ -1,7 +1,7 @@
 <template>
-    <div class="relative col-span-1 aspect-[3/4] rounded-lg" @mouseenter="mouseenter" @mouseleave="mouseleave">
+    <div class="relative col-span-1 rounded-lg" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="[aspect]">
         <nuxt-img :src="src" class="h-full w-full object-cover rounded-lg" />
-        <div class="absolute z-20 top-0 w-full h-full l-0 p-3 flex flex-col justify-between items-start rounded-lg"
+        <div class="absolute z-20 top-0 w-full h-full l-0 p-3 md:p-5 lg:p-6 xl:p-7 flex flex-col justify-between items-start rounded-lg"
             ref="card">
             <div class="w-full flex items-center" :class="getTheOrder(1)">
                 <AnimsAnimButton :action="action" :duration="1" :animate="animate" cursorType="cursor-none"
@@ -10,13 +10,13 @@
                 </AnimsAnimButton>
             </div>
             <div class="text-light w-full">
-                <h2 class="text-3xl font-light w-full overflow-hidden" :class="getTheOrder(2)">
+                <h2 class="text-3xl xl:text-4xl font-light xl:font-normal w-full overflow-hidden py-1" :class="getTheOrder(2)">
                     <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'"
                         :animate="animate">
                         {{ name }}
                     </anims-anim-lines>
                 </h2>
-                <p class="font-extralight overflow-hidden" :class="getTheOrder(2)">
+                <p class="font-extralight overflow-hidden xl:text-xl xl:font-light" :class="getTheOrder(2)">
                     <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'"
                         :animate="animate">
                         {{ type }}
@@ -63,7 +63,11 @@ const props = defineProps({
         type: Number,
         required: true
     },
-
+    aspect:{
+        type: String,
+        required: false,
+        default: "aspect-[3/4]"
+    }
 })
 
 const { width } = useWindowSize();
@@ -87,11 +91,11 @@ const getTheOrder = (v) => {
     }
 }
 
-const action = ref(width.value < 768 ? true : false);
-const animate = ref(width.value < 768 ? false : true);
+const action = ref(width.value < 1024 ? true : false);
+const animate = ref(width.value < 1024 ? false : true);
 
 const mouseenter = () => {
-    if (width.value < 768) return;
+    if (width.value < 1024) return;
     emits('change', {
             icon: 'vaadin:paperplane',
             size: '40px',
@@ -105,11 +109,10 @@ const mouseenter = () => {
         ease: "power2.out"
     })
     action.value = true;
-
 }
 
 const mouseleave = () => {
-    if (width.value < 768) return;
+    if (width.value < 1024) return;
     emits('default', {
             icon: 'radix-icons:dot-filled',
             size: '30px',

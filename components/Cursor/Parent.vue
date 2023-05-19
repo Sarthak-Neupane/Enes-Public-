@@ -2,9 +2,6 @@
     <div ref="cursor" class="pointer-events-none fixed"
         :class="[zIndex, mixBlend]">
         <div class="h-full w-full">
-            <!-- <Icon name="material-symbols:send-rounded" size="30px" v-if="cursorNumber === 1" /> -->
-            <!-- <Icon name="line-md:github-twotone" size="30px" v-else-if="cursorNumber === 2" class="text-dark" /> -->
-            <!-- <Icon name="radix-icons:dot-filled" size="30px" v-else /> -->
             <Icon :name="icon" :size="size" :class="color" />
         </div>
     </div>
