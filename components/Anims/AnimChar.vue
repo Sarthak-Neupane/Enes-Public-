@@ -28,7 +28,7 @@ watch(() => props.play, (newVal, oldVal) => {
         const characters = container.value.querySelectorAll('span');
         t1.from(characters, {
             duration: 0.8,
-            // y: 40,
+            y: 20,
             opacity: 0,
             stagger: (0.5 / characters.length),
             ease: 'back.out(1.7)',
