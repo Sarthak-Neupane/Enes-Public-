@@ -2,7 +2,7 @@
     <section class="pt-20 lg:pt-32 pb-9 px-2 lg:px-7 bg-light text-dark flex flex-col gap-5 lg:gap-10">
         <h1 class="text-2xl lg:text-3xl xl:text-5xl py-2 lg:font-semibold overflow-y-hidden">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
-                :animate="true">
+                :animate="true" @complete="revealNav">
                 View All My Works <Icon name="teenyicons:top-right-outline" class="text-center" :size="getIconSize" />
             </AnimsAnimLines>
         </h1>
@@ -46,8 +46,11 @@ const action = ref(false)
 const ctx = ref()
  const container = ref(null)
 
-onMounted(()=>{
+const revealNav = () => {
     animStore.setAnimating(false)
+}
+
+onMounted(()=>{
     action.value = true
     ctx.value = gsap.context((self)=>{
         const cards = self.selector('.cardOverlay')
@@ -59,7 +62,7 @@ onMounted(()=>{
             stagger: {
                 each: 0.4,
                 from: 'start'
-            }
+            },
         })
     }, container.value)
 })

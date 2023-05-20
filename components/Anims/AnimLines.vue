@@ -52,6 +52,8 @@ const returnClass = computed(()=>{
     }
 })
 
+const emits = defineEmits(['complete'])
+
 
 watch(() => props.action, (v) => {
     if (v) {
@@ -60,6 +62,9 @@ watch(() => props.action, (v) => {
             yPercent: props.yPercent,
             opacity: 1,
             ease: props.ease,
+            onComplete: () => {
+                emits('complete')
+            }
         })
     } else {
         gsap.to(lineSelector.value, {
