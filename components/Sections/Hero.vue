@@ -33,11 +33,11 @@
         <NuxtLink to="/works" >
             <AnimsAnimButton class="mt-7 mb-7 lg:mt-10 border-[1px] border-solid border-light px-3 text-sm py-1 rounded-md "
                 :action="action" :duration="2" :animate="true" cursor-type="cursor-none" @mouseenter="$emit('change', {
-                    icon: 'vaadin:paperplane',
+                    icon: 'radix-icons:dot-filled',
                     size: '30px',
-                    color: 'text-dark',
+                    color: '',
                     zIndex: 'z-50', 
-                    mixBlend: 'mix-blend-normal'
+                    mixBlend: 'mix-blend-difference'
                 })" 
                 @mouseleave="$emit('default', {})">
                 Request A Project

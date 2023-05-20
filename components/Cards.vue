@@ -10,7 +10,8 @@
                 </AnimsAnimButton>
             </div>
             <div class="text-light w-full">
-                <h2 class="text-3xl xl:text-4xl font-light xl:font-normal w-full overflow-hidden py-1" :class="getTheOrder(2)">
+                <h2 class="text-3xl xl:text-4xl font-light xl:font-normal w-full overflow-hidden py-1"
+                    :class="getTheOrder(2)">
                     <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'"
                         :animate="animate">
                         {{ name }}
@@ -63,7 +64,7 @@ const props = defineProps({
         type: Number,
         required: true
     },
-    aspect:{
+    aspect: {
         type: String,
         required: false,
         default: "aspect-[3/4]"
@@ -97,11 +98,11 @@ const animate = ref(width.value < 1024 ? false : true);
 const mouseenter = () => {
     if (width.value < 1024) return;
     emits('change', {
-            icon: 'vaadin:paperplane',
-            size: '40px',
-            color: '',
-            zIndex: 'z-50',
-            mixBlend: 'mix-blend-normal'
+        icon: 'radix-icons:dot-filled',
+        size: '30px',
+        color: '',
+        zIndex: 'z-50',
+        mixBlend: 'mix-blend-normal'
     });
     gsap.to(overlay.value, {
         duration: 0.5,
@@ -114,11 +115,11 @@ const mouseenter = () => {
 const mouseleave = () => {
     if (width.value < 1024) return;
     emits('default', {
-            icon: 'radix-icons:dot-filled',
-            size: '30px',
-            color: '',
-            zIndex: 'z-50',
-            removeMixBlend: false
+        icon: 'radix-icons:dot-filled',
+        size: '30px',
+        color: '',
+        zIndex: 'z-50',
+        removeMixBlend: false
     })
     gsap.to(overlay.value, {
         duration: 0.5,

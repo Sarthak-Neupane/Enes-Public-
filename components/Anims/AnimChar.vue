@@ -36,6 +36,6 @@ watch(() => props.play, (newVal, oldVal) => {
                 emits('done')
             }
         })
-    } 
+    }
 })
 </script>

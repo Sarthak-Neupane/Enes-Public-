@@ -142,19 +142,19 @@ onMounted(()=>{
             }
         })
 
-        tl.from([headlineContact], {
+        tl.from(headlineContact, {
             y: 100,
             opacity: 0,
             duration: 1,
             ease: 'power4.out'
         })
-        .from([headlineMail], {
+        .from(headlineMail, {
             y: 100,
             opacity: 0,
             duration: 1,
             ease: 'power4.out'
         }, '-=0.7')
-        .from([footerContact], {
+        .from(footerContact, {
             opacity: 0,
             duration: 1,
             ease: 'power4.out'
