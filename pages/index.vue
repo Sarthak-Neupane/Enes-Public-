@@ -3,10 +3,10 @@
         <SectionsHero @change="emitIconChange" @default="emitIconDefault" ></SectionsHero>
     </section>
     <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
-        <SectionsMiddleWorks @change="emitIconChange" @default="emitIconDefault"></SectionsMiddleWorks>
+        <SectionsWorks @change="emitIconChange" @default="emitIconDefault"></SectionsWorks>
     </section>
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
-        <SectionsLowerMiddle @change="emitIconChange" @default="emitIconDefault"></SectionsLowerMiddle>
+        <SectionsAboutNew @change="emitIconChange" @default="emitIconDefault"></SectionsAboutNew>
     </section>
     <section class="px-2 xl:px-7 bg-light" ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault"></SectionsFooter>
