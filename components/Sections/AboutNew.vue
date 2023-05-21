@@ -6,9 +6,11 @@
         zIndex: 'z-50'
     })">
     <div v-if="width > 1024" class="col-span-2 flex flex-col gap-16 justify-center items-start">
-        <h1 class="text-4xl font-medium">About Me</h1>
-        <p class="text-3xl font-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex autem magnam reprehenderit tempora nobis neque molestias nesciunt exercitationem perferendis eligendi quis asperiores consectetur odio dicta voluptates, nostrum quaerat. Ut, assumenda.</p>
-        <div class="grid grid-cols-4 flex-1 items-center">
+        <div class="overflow-hidden">
+            <h1 class="text-4xl font-medium" id="About_Headline">About Me</h1>
+        </div>
+        <p class="text-3xl font-light" id="About_Paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex autem magnam reprehenderit tempora nobis neque molestias nesciunt exercitationem perferendis eligendi quis asperiores consectetur odio dicta voluptates, nostrum quaerat. Ut, assumenda.</p>
+        <div class="grid grid-cols-4 flex-1 items-center" id="About_More" v-if="width >= 1280">
             <div class="col-span-1 flex flex-col gap-5">
                 <Experiences title="2022 - 2024" subtitle="Creative Director Basic"></Experiences>
                 <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA"></Experiences>
@@ -70,25 +72,54 @@ const ctx = ref()
 
 onMounted(() => {
     ctx.value = gsap.context((self) => {
-        const headline = self.selector('#About_Picture_Headline')
-        const subtitle = self.selector('#About_Picture_Subtitle')
-        const timeline = gsap.timeline({
+        const headlineImg = self.selector('#About_Picture_Headline')
+        const subtitleImg = self.selector('#About_Picture_Subtitle')
 
-        })
-        timeline.to(headline, {
-            duration: 1,
-            xPercent: width.value > 1024 ? -55 : -100,
+        const headline = self.selector('#About_Headline')
+        const subtitle = self.selector('#About_Paragraph')
+        const more = self.selector('.custom_experiences')
+        
+        const timeline = gsap.timeline({
             scrollTrigger: {
-                trigger: headline,
+                trigger: container.value,
+                start: 'top 80%',
+            }
+        })
+
+        timeline.from(headline, {
+            duration: 1,
+            yPercent: 100,
+            opacity: 0,
+            ease: 'power4.out'
+        })
+        timeline.from(subtitle, {
+            duration: 1,
+            yPercent: 10,
+            opacity: 0,
+            ease: 'power4.out'
+        }, '-=0.5')
+        timeline.from(more, {
+            duration: 1,
+            yPercent: 10,
+            opacity: 0,
+            ease: 'power4.out',
+            stagger: 0.05
+        }, '-=0.5')
+
+        gsap.to(headlineImg, {
+            duration: 1,
+            xPercent: width.value > 1024 ? -65 : -100,
+            scrollTrigger: {
+                trigger: headlineImg,
                 start: width.value > 1024 ? 'top 70%' : 'top 90%',
                 scrub: true,
             }
         })
-        timeline.to(subtitle, {
+        gsap.to(subtitleImg, {
             duration: 1,
             xPercent: width.value > 1024 ? -100 : -150,
             scrollTrigger: {
-                trigger: subtitle,
+                trigger: subtitleImg,
                 start: 'top 90%',
                 scrub: true
             }
