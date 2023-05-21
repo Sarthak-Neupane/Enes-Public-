@@ -6,7 +6,7 @@
         <SectionsWorks @change="emitIconChange" @default="emitIconDefault"></SectionsWorks>
     </section>
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
-        <SectionsAboutNew @change="emitIconChange" @default="emitIconDefault"></SectionsAboutNew>
+        <SectionsAbout @change="emitIconChange" @default="emitIconDefault"></SectionsAbout>
     </section>
     <section class="px-2 xl:px-7 bg-light" ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault"></SectionsFooter>
