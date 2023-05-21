@@ -24,7 +24,7 @@
                         <AnimsAnimLinks text="About" :action="action2" @done="completeAnim('action2')"></AnimsAnimLinks>
                     </li>
                 </NuxtLink>
-                <NuxtLink to="/">
+                <NuxtLink to="/contact">
                     <li data-action="action3" @mouseenter="mouseenter" @mouseleave="mouseleave"
                         class="flex justify-center items-center gap-3">
                         <AnimsAnimLinks text="Contact" :action="action3" @done="completeAnim('action3')"></AnimsAnimLinks>
