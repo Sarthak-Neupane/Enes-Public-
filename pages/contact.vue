@@ -1,6 +1,6 @@
 <template>
-    <section ref="container">
-        <div class="h-[100lvh] bg-dark px-2 lg:px-7 pt-10 lg:pt-28">
+    <section ref="container" class="sm:max-h-[100lvh] sm:min-h-[100lvh] lg:max-h-none sm:flex sm:flex-col sm:justify-between">
+        <div class="lg:h-[100lvh] bg-dark px-2 sm:px-9 lg:px-7 pt-10 lg:pt-28 mb-10 lg:mb-0">
             <div class="col-span-10 grid-flow-row mt-20 mb-10 lg:my-15 overflow-hidden">
                 <h1 class="text-5xl" id="Contact_Headline">Reach Out</h1>
             </div>
@@ -10,7 +10,7 @@
                     <p class="max-w-md opacity-70">Whether it's a conversation about all things design or thinking about a
                         potential project or opportunity, get in touch</p>
                     <form class="w-full mt-10">
-                        <div class="flex flex-col md:flex-row gap-4 w-full">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-4 w-full">
                             <input type="text"
                                 class="bg-light bg-opacity-5 text-light py-2 w-full md:w-1/2 px-3 rounded-md focus:outline-none"
                                 placeholder="Name">
@@ -19,9 +19,9 @@
                                 placeholder="Email">
                         </div>
                         <textarea
-                            class="mt-4 rounded-md py-2 px-3 bg-light bg-opacity-5 text-light resize-none w-full focus:outline-none"
-                            placeholder="Message" id="" rows="5"></textarea>
-                        <button class="w-full bg-light text-dark mt-3 py-2 rounded-md font-medium">SEND</button>
+                            class="mt-4 sm:mt-8 lg:mt-4 rounded-md py-2 px-3 bg-light bg-opacity-5 text-light resize-none w-full focus:outline-none"
+                            placeholder="Message" id="" :rows="getTextAreaRows"></textarea>
+                        <button class="w-full bg-light text-dark mt-3 sm:mt-8 lg:mt-4 py-2 rounded-md font-medium">SEND</button>
                     </form>
                 </div>
             </div>
@@ -72,7 +72,16 @@ onMounted(() => {
             }, '-=0.5')
 
     }, container.value)
+})
 
+const getTextAreaRows = computed(()=>{
+    if(width.value >= 1024){
+        return 5
+    } else if(width.value >= 648){
+        return 7
+    } else {
+        return 6
+    }
 })
 
 onUnmounted(() => {

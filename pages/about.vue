@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-32 lg:pt-40 grid grid-cols-12 px-2 sm:px-8 lg:px-7" ref="container">
+    <section class="pt-32 lg:pt-40 grid grid-cols-12 px-2 sm:px-9 lg:px-7" ref="container">
         <AboutHeadline class="mb-16 lg:mb-24" :action="action" @complete="proceedOtherAnims" />
         <div class="col-span-6" v-if="width >= 1024">
         </div>
