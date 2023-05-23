@@ -11,7 +11,7 @@
             </div>
             <div class="overflow-hidden">
                 <h1
-                    class="text-3xl lg:my-8 md:my-5 md:text-6xl lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words" id="Headline_Mail">
+                    class="text-3xl lg:my-8 md:my-5 md:text-5xl lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words" id="Headline_Mail">
                     hello@loremgmail.com</h1>
             </div>
         </div>
