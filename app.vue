@@ -5,7 +5,7 @@
             :color="color" :mix-blend="mixBlend"></CursorParent>
         <nav ref="nav" v-if="width && width > 1024"
             class="-translate-y-full opacity-0 w-full bg-transparent mix-blend-difference flex items-center  px-7 h-16 z-50 fixed top-0 left-0" :class="route.path !== '/' ? 'justify-between' : 'justify-end'">
-            <NuxtLink to="/" v-if="route.path !== '/'" >
+            <NuxtLink to="/" v-show="route.path !== '/'" >
                     <h1 data-action="logo" @mouseenter="mouseenter" @mouseleave="mouseleave"
                         class="flex justify-center items-center gap-3 text-3xl font-bold">
                         <AnimsAnimLinks text="En." :action="logo" @done="completeAnim('logo')"></AnimsAnimLinks>

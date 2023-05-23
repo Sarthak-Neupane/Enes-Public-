@@ -14,16 +14,16 @@
                 perferendis eligendi quis asperiores consectetur odio dicta voluptates, nostrum quaerat. Ut, assumenda.</p>
             <div class="grid grid-cols-4 flex-1 items-center" id="About_More" v-if="width >= 1280">
                 <div class="col-span-1 flex flex-col gap-5">
-                    <Experiences title="2022 - 2024" subtitle="Creative Director Basic"></Experiences>
-                    <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA"></Experiences>
-                    <Experiences title="2015 - 2016" subtitle="Junior Designer AKQA"></Experiences>
+                    <Experiences title="2022 - 2024" subtitle="Creative Director Basic" class="max-w-[10rem]"></Experiences>
+                    <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA" class="max-w-[10rem]"></Experiences>
+                    <Experiences title="2015 - 2016" subtitle="Junior Designer AKQA" class="max-w-[10rem]"></Experiences>
                 </div>
                 <div class="col-span-2">
                 </div>
                 <div class="col-span-1 flex flex-col gap-5">
-                    <Experiences title="2021 - 2022" subtitle="Design Director Play"></Experiences>
-                    <Experiences title="2017 - 2018" subtitle="Digital Designer Google"></Experiences>
-                    <Experiences title="2011 - 2014" subtitle="Design Intern AKQA"></Experiences>
+                    <Experiences title="2021 - 2022" subtitle="Design Director Play" class="max-w-[10rem]"></Experiences>
+                    <Experiences title="2017 - 2018" subtitle="Digital Designer Google" class="max-w-[10rem]"></Experiences>
+                    <Experiences title="2011 - 2014" subtitle="Design Intern AKQA" class="max-w-[10rem]"></Experiences>
                 </div>
             </div>
         </div>
