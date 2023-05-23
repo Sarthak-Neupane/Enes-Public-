@@ -1,5 +1,5 @@
 <template>
-        <div class="text-5xl font-normal col-span-9" v-if="width > 1280">
+        <div class="text-5xl font-normal col-span-9" v-if="width >= 1280">
             <h1 class="w-full py-1 overflow-hidden">
                 <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                     :animate="true">

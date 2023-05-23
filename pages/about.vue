@@ -1,7 +1,7 @@
 <template>
-    <section class="pt-32 lg:pt-40 grid grid-cols-12 px-2 lg:px-7" ref="container">
+    <section class="pt-32 lg:pt-40 grid grid-cols-12 px-2 sm:px-8 lg:px-7" ref="container">
         <AboutHeadline class="mb-16 lg:mb-24" :action="action" @complete="proceedOtherAnims" />
-        <div class="col-span-6" v-if="width > 1024">
+        <div class="col-span-6" v-if="width >= 1024">
         </div>
         <div class="col-span-12 lg:col-span-6 mb-24 lg:mb-36">
             <p class="text-sm max-w-lg opacity-0 mb-8" id="About_Paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
@@ -10,7 +10,7 @@
             <div class="relative">
                 <div class="absolute inset-0 w-full h-full bg-dark rounded-md scale-y-1 origin-bottom" id="About_Image"></div>
                 <nuxt-img src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_1.jpg"
-                    class="rounded-md"></nuxt-img>
+                    class="rounded-md object-cover sm:aspect-video lg:aspect-auto"></nuxt-img>
             </div>
         </div>
         <div class="col-span-12 lg:col-span-4 mb-12">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div id="About_Experiences"
-            class="col-span-12 lg:col-span-6 flex justify-start items-center gap-11 lg:gap-56 font-light opacity-75 lg:opacity-100 mb-24 lg:mb-36">
+            class="col-span-12 lg:col-span-6 flex justify-start sm:justify-between lg:justify-start items-center gap-11 lg:gap-56 font-light opacity-75 lg:opacity-100 mb-24 lg:mb-36">
             <div class="flex flex-col gap-12">
                 <Experiences title="2022 - 2024" subtitle="Creative Director Basic" class="w-full opacity-0 translate-y-10  About_Experiences_Each"></Experiences>
                 <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA" class="w-full opacity-0 translate-y-10  About_Experiences_Each"></Experiences>
@@ -93,7 +93,7 @@ const proceedOtherAnims = () => {
             ease: 'power4.out',
             scrollTrigger: {
                 trigger: About_Skills_Headline,
-                start: 'top 70%',
+                start: 'top 75%',
             }
         })
 
@@ -105,7 +105,7 @@ const proceedOtherAnims = () => {
             stagger: 0.1,
             scrollTrigger: {
                 trigger: About_Skills,
-                start: 'top 70%',
+                start: 'top 75%',
             }
         })
 
@@ -115,7 +115,7 @@ const proceedOtherAnims = () => {
             ease: 'power4.out',
             scrollTrigger: {
                 trigger: About_Experiences_Headline,
-                start: 'top 70%',
+                start: 'top 75%',
             }
         })
 
@@ -127,7 +127,7 @@ const proceedOtherAnims = () => {
             stagger: 0.1,
             scrollTrigger: {
                 trigger: About_Experiences,
-                start: 'top 70%',
+                start: 'top 75%',
             }
         })
 
