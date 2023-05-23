@@ -138,7 +138,7 @@ onMounted(()=>{
             scrollTrigger: {
                 trigger: container.value,
                 start: 'top 80%',
-                end: 'bottom 20%',
+                // end: 'bottom 20%',
             }
         })
 
