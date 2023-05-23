@@ -5,6 +5,9 @@
 </template>
 
 <script setup>
+import { useWindowSize } from '@vueuse/core';
+
+const { width } = useWindowSize();
 const props = defineProps({
     text: {
         type: String,
@@ -28,6 +31,7 @@ const container = ref(null);
 // const t1 = gsap.timeline();
 
 watch(() => props.action, (v) => {
+    if(width.value < 1024) return
     const characters = [...container.value.querySelectorAll('span')];
     if (v) {
         gsap.from(characters, {

@@ -1,9 +1,9 @@
 <template>
     <section class="bg-dark text-light lg:cursor-none" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
-        <CursorParent v-if="width > 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
+        <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
-        <nav ref="nav" v-if="width && width > 1024"
+        <nav ref="nav" v-if="width && width >= 768"
             class="-translate-y-full opacity-0 w-full bg-transparent mix-blend-difference flex items-center  px-7 h-16 z-50 fixed top-0 left-0" :class="route.path !== '/' ? 'justify-between' : 'justify-end'">
             <NuxtLink to="/" v-show="route.path !== '/'" >
                     <h1 data-action="logo" @mouseenter="mouseenter" @mouseleave="mouseleave"

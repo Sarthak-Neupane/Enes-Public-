@@ -6,7 +6,10 @@
 </template>
 
 <script setup>
+import { useWindowSize } from '@vueuse/core'
 const { $gsap: gsap } = useNuxtApp()
+
+const { width } = useWindowSize()
 
 const props = defineProps({
     title: {
@@ -20,6 +23,7 @@ const headline = ref()
 
 
 const mouseenter = () => {
+    if(width.value < 1024) return
     if(overlay.value === undefined || headline.value === undefined) return
     const timeline = gsap.timeline()
     timeline.to(overlay.value, {
@@ -36,6 +40,7 @@ const mouseenter = () => {
 }
 
 const mouseleave = () => {
+    if(width.value < 1024) return
     if(overlay.value === undefined || headline.value === undefined) return
     const timeline = gsap.timeline()
     timeline.to(overlay.value, {

@@ -6,6 +6,10 @@
 </template>
 
 <script setup>
+import { useWindowSize } from '@vueuse/core';
+
+const {width} = useWindowSize()
+
 const props = defineProps({
     action: {
         type: Boolean,
@@ -58,6 +62,7 @@ const getClass = computed(()=>{
 })
 
 const mouseenter = () => {
+    if(width.value < 1024) return
     gsap.to(background.value, {
         scaleX: 1,
         duration: 1,
@@ -66,6 +71,7 @@ const mouseenter = () => {
 }
 
 const mouseleave = () => {
+    if(width.value < 1024) return
     gsap.to(background.value, {
         scaleX: 0,
         duration: 1,
