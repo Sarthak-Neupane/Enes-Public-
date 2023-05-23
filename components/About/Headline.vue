@@ -20,7 +20,7 @@
             </h1>
         </div>
         <div class="col-span-12 overflow-hidden " v-else>
-            <h1 class="w-full text-4xl font-medium translate-y-1/4 opacity-0" ref="Mobile_Headline">
+            <h1 class="w-full text-4xl font-medium translate-y-1/2 opacity-0" ref="Mobile_Headline">
                 <span class="min-w-max opacity-0 pointer-events-none">Gap</span> I combine my experience in product and brand to
                 solve problems, tell stories, and create compelling experiences.
             </h1>
@@ -54,7 +54,7 @@ watch(() => props.action, (newVal, oldVal) => {
         timeline.to(Mobile_Headline.value, {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.8,
             ease: 'power4.out',
             onComplete: () => {
                 complete()

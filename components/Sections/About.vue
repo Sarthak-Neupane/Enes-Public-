@@ -9,7 +9,7 @@
             <div class="overflow-hidden">
                 <h1 class="text-4xl font-medium" id="About_Headline">About Me</h1>
             </div>
-            <p class="text-xl lg:text-3xl font-light" id="About_Paragraph">Lorem ipsum, dolor sit amet consectetur
+            <p class="text-xl md:text-2xl xl:text-3xl font-light" id="About_Paragraph">Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Ex autem magnam reprehenderit tempora nobis neque molestias nesciunt exercitationem
                 perferendis eligendi quis asperiores consectetur odio dicta voluptates, nostrum quaerat. Ut, assumenda.</p>
             <div class="grid grid-cols-4 flex-1 items-center" id="About_More" v-if="width >= 1280">
@@ -31,15 +31,15 @@
             <div class="relative aspect-square flex justify-center items-center">
                 <div class="relative flex justify-center items-center">
                     <nuxt-img src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg"
-                        class="my-0 mx-auto rounded-md lg:w-10/12" fit="contain"> </nuxt-img>
+                        class="my-0 mx-auto rounded-md sm:w-9/12 lg:w-10/12" fit="contain"> </nuxt-img>
                     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-0 rounded-md"></div>
                 </div>
                 <div
                     class="absolute origin-center w-full overflow-hidden text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:mix-blend-difference">
-                    <h1 class="text-8xl lg:text-[10rem] text-center font-medium whitespace-nowrap translate-x-1/2 lg:translate-x-15"
+                    <h1 class="text-8xl sm:text-[11rem] lg:text-[10rem] text-center font-medium whitespace-nowrap translate-x-1/2 lg:translate-x-15"
                         id="About_Picture_Headline">ABOUT ME</h1>
-                    <p class="text-2xl text-center font-light whitespace-nowrap translate-x-1/2" id="About_Picture_Subtitle"
-                        v-if="width < 1024">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                    <!-- <p class="text-2xl text-center font-light whitespace-nowrap translate-x-1/2" id="About_Picture_Subtitle"
+                        v-if="width < 1024">Lorem ipsum, dolor sit amet consectetur adipisicing.</p> -->
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@ const ctx = ref()
 onMounted(() => {
     ctx.value = gsap.context((self) => {
         const headlineImg = self.selector('#About_Picture_Headline')
-        const subtitleImg = self.selector('#About_Picture_Subtitle')
+        // const subtitleImg = self.selector('#About_Picture_Subtitle')
 
         const headline = self.selector('#About_Headline')
         const subtitle = self.selector('#About_Paragraph')
@@ -118,15 +118,15 @@ onMounted(() => {
                 scrub: true,
             }
         })
-        gsap.to(subtitleImg, {
-            duration: 1,
-            xPercent: width.value > 1024 ? -100 : -150,
-            scrollTrigger: {
-                trigger: subtitleImg,
-                start: 'top 90%',
-                scrub: true
-            }
-        })
+        // gsap.to(subtitleImg, {
+        //     duration: 1,
+        //     xPercent: width.value > 1024 ? -100 : -150,
+        //     scrollTrigger: {
+        //         trigger: subtitleImg,
+        //         start: 'top 90%',
+        //         scrub: true
+        //     }
+        // })
     }, container.value)
 })
 

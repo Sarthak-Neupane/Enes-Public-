@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-dark text-light cursor-none" v-if="mountedValue" @mousemove="mousemove"
+    <section class="bg-dark text-light lg:cursor-none" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
         <CursorParent v-if="width > 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>

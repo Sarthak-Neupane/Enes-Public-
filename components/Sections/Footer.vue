@@ -7,16 +7,16 @@
     })" ref="container">
         <div class="pt-4">
             <div class="my-4 py-2 overflow-hidden">
-                <h1 class="font-semibold text-5xl lg:text-4xl break-words" id="Headline_Contact">Let's Build Together</h1>
+                <h1 class="font-semibold text-5xl md:text-4xl lg:text-4xl break-words" id="Headline_Contact">Let's Build Together</h1>
             </div>
             <div class="overflow-hidden">
                 <h1
-                    class="text-3xl lg:my-8 lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words" id="Headline_Mail">
+                    class="text-3xl lg:my-8 md:my-5 md:text-6xl lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words" id="Headline_Mail">
                     hello@loremgmail.com</h1>
             </div>
         </div>
         <div id="Footer_Contact"
-            class="mt-8 lg:mt-14 w-full flex justify-center items-start flex-col lg:flex-row lg:justify-between gap-4 lg:items-end">
+            class="mt-8 md:mt-12 lg:mt-14 w-full flex justify-center items-start flex-col md:flex-row md:justify-between gap-4 md:items-end">
             <ul class="text-left z-50 relative flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
@@ -44,7 +44,7 @@
                 <li>Address</li>
                 <li>Phone</li>
             </ul>
-            <div class="text-xs w-full text-right lg:w-max">
+            <div class="text-xs w-full text-right md:w-max">
                 created by Sarthak Neupane
             </div>
         </div>
