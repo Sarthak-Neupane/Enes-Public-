@@ -106,5 +106,10 @@ const getIconSize = computed(()=>{
     }
 })
 
+onBeforeRouteLeave((to, from, next) => {
+    animStore.setAnimating(true)
+    next()
+});
+
 
 </script>

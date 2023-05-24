@@ -88,4 +88,9 @@ onUnmounted(() => {
     ctx.value.revert()
 })
 
+onBeforeRouteLeave((to, from, next) => {
+    animStore.setAnimating(true)
+    next()
+});
+
 </script>

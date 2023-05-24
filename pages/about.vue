@@ -142,4 +142,9 @@ onMounted(() => {
     action.value = true
 })
 
+onBeforeRouteLeave((to, from, next) => {
+    animStore.setAnimating(true)
+    next()
+});
+
 </script>

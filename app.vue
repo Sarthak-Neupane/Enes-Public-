@@ -1,7 +1,7 @@
 <template>
     <Teleport to="body">
         <Transition name="nav">
-            <component :is="MobileNav" v-if="mobileNav" @clicked="toggleMobileNav" />
+            <component :is="MobileNav" v-show="mobileNav" @clicked="toggleMobileNav" />
         </Transition>
     </Teleport>
     <section class="bg-dark text-light lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
@@ -139,7 +139,6 @@ const completeAnim = (v) => {
 
 watch(animating, (v) => {
     if (v === false) {
-        console.log('animating in', nav.value)
         gsap.to(nav.value, {
             opacity: 1,
             yPercent: 0,
@@ -148,7 +147,6 @@ watch(animating, (v) => {
             ease: 'power2.out'
         })
     } else {
-        console.log('animating back', nav.value)
         gsap.to(nav.value, {
             opacity: 0,
             yPercent: -100,
