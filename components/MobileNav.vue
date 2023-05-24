@@ -1,5 +1,5 @@
 <template>
-    <nav class="h-[100lvh] flex justify-center flex-col items-start gap-3 text-5xl px-2 sm:px-7 font-bold fixed top-0 left-0 w-full bg-dark text-light z-50 overflow-hidden"
+    <nav class="h-[100lvh] flex justify-center flex-col items-start gap-3 text-5xl px-2 sm:px-7 font-normal fixed top-0 left-0 w-full bg-dark text-light z-50 overflow-hidden"
         ref="nav">
         <NuxtLink to="/" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
             Home
