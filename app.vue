@@ -1,5 +1,8 @@
 <template>
-    <section class="bg-dark text-light lg:cursor-none" v-if="mountedValue" @mousemove="mousemove"
+    <Teleport to="body">
+        <component :is="MobileNav" v-if="mobileNav" />
+    </Teleport>
+    <section class="bg-dark text-light lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
         <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
@@ -32,11 +35,11 @@
                 </NuxtLink>
             </ul>
         </nav>
-        <nav ref="nav" v-else class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
-            <div class="">
+        <div ref="nav" v-else class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
+            <div @click="toggleMobileNav">
                 <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
             </div>
-        </nav>
+        </div>
         <NuxtPage @change="changeIcon" @default="defaultIcon" />
     </section>
 </template>
@@ -47,11 +50,32 @@ import { useHeroAnimStore } from '~/store/heroAnim';
 import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
 
+const { $gsap: gsap } = useNuxtApp();
+
+const MobileNav = defineAsyncComponent(() => import('~/components/MobileNav.vue'))
+
+const mobileNav = ref(false)    
+
+const bodyClass = computed(() => {
+    return {
+        'overflow-hidden': mobileNav.value
+    }
+})
+
+const toggleMobileNav = () => {
+    mobileNav.value = !mobileNav.value
+}
+
+useHead({
+    bodyAttrs: {
+        class: bodyClass
+    }
+})
+
 const route = useRoute();
 
 const { width } = useWindowSize();
 
-const { $gsap: gsap } = useNuxtApp();
 
 const action1 = ref(false)
 const action2 = ref(false)
@@ -75,6 +99,7 @@ const mountedValue = ref(false)
 const animStore = useHeroAnimStore()
 
 const { animating } = storeToRefs(animStore)
+
 
 onMounted(() => {
     mountedValue.value = true

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div id="About_Experiences"
-            class="col-span-12 lg:col-span-6 flex justify-start sm:justify-between lg:justify-start items-center gap-11 lg:gap-56 font-light opacity-75 lg:opacity-100 mb-24 lg:mb-36">
+            class="col-span-12 lg:col-span-6 flex justify-start sm:justify-between lg:justify-start items-center gap-11 lg:gap-56 font-light opacity-70 lg:opacity-100 mb-24 lg:mb-36">
             <div class="flex flex-col gap-12">
                 <Experiences title="2022 - 2024" subtitle="Creative Director Basic" class="w-full opacity-0 translate-y-10  About_Experiences_Each"></Experiences>
                 <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA" class="w-full opacity-0 translate-y-10  About_Experiences_Each"></Experiences>
@@ -93,7 +93,7 @@ const proceedOtherAnims = () => {
             ease: 'power4.out',
             scrollTrigger: {
                 trigger: About_Skills_Headline,
-                start: 'top 75%',
+                start: 'top 70%',
             }
         })
 
@@ -105,7 +105,7 @@ const proceedOtherAnims = () => {
             stagger: 0.1,
             scrollTrigger: {
                 trigger: About_Skills,
-                start: 'top 75%',
+                start: 'top 70%',
             }
         })
 
@@ -115,7 +115,7 @@ const proceedOtherAnims = () => {
             ease: 'power4.out',
             scrollTrigger: {
                 trigger: About_Experiences_Headline,
-                start: 'top 75%',
+                start: 'top 70%',
             }
         })
 
@@ -127,7 +127,7 @@ const proceedOtherAnims = () => {
             stagger: 0.1,
             scrollTrigger: {
                 trigger: About_Experiences,
-                start: 'top 75%',
+                start: 'top 70%',
             }
         })
 

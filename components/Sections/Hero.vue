@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <div
-            class="relative z-20 flex flex-col justify-center items-start gap-5 text-7xl font-medium md:mt-0 lg:mt-0 md:w-full md:flex-row md:justify-center md:text-8xl lg:text-9xl xl:text-[13rem] md:font-bold">
+            class="relative z-20 flex flex-col justify-center items-start gap-5 text-7xl font-medium md:mt-10 md:w-full md:flex-row md:justify-center md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[13rem] md:font-bold">
             <AnimsAnimChar :play="play" text="ENES" class="text-justify flex justify-center items-center gap-[1px]"
                 @done="revealOtherAnims"> </AnimsAnimChar>
             <AnimsAnimChar :play="play" text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
@@ -23,7 +23,7 @@
                 Developer Lorem, ipsum.
             </AnimsAnimLines>
         </h2>
-        <p class="mt-3 lg:max-w-md font-light overflow-y-hidden md:text-lg md:mt-5">
+        <p class="mt-3 sm:max-w-lg lg:max-w-md font-light overflow-y-hidden md:text-lg md:mt-5">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto

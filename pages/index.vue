@@ -1,5 +1,5 @@
 <template>
-    <section class="min-h-screen max-h-screen h-screen flex flex-col justify-end items-start md:justify-center lg:justify-end px-2 xl:px-7 pb-12" ref="hero">
+    <section class="min-h-screen max-h-screen h-screen flex flex-col justify-end items-start md:justify-center xl:justify-end px-2 xl:px-7 pb-12" ref="hero">
         <SectionsHero @change="emitIconChange" @default="emitIconDefault" ></SectionsHero>
     </section>
     <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
