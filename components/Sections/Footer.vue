@@ -163,4 +163,8 @@ onMounted(()=>{
     }, container.value)
 })
 
+onUnmounted(()=>{
+    ctx.value.revert()
+})
+
 </script>

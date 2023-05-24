@@ -47,6 +47,7 @@ const ctx = ref()
  const container = ref(null)
 
 const revealNav = () => {
+    console.log('reveal')
     animStore.setAnimating(false)
 }
 

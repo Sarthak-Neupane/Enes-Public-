@@ -14,11 +14,14 @@
 </template>
 
 <script setup>
-import { useWindowSize } from '@vueuse/core';
+// import { useWindowSize } from '@vueuse/core';
+// import { useHeroAnimStore } from '~/store/heroAnim';
 
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
-const { width } = useWindowSize();
+// const { width } = useWindowSize();
+
+// const animStore = useHeroAnimStore()
 
 const emits = defineEmits(['change', 'default'])
 
@@ -35,13 +38,8 @@ const middle = ref(null)
 const lowerMiddle = ref(null)
 const footer = ref(null)
 
-const uncover = gsap.timeline({ paused: true })
 
 onMounted(() => {
-
-    // gsap.set(footer.value, { yPercent: 100 })
-    // uncover.to(footer.value, { yPercent: 0, ease: 'none' });
-
     ScrollTrigger.create({
         trigger: hero.value,
         start: "top top",
@@ -51,30 +49,6 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-
-    // ScrollTrigger.create({
-    //     trigger: lowerMiddle.value,
-    //     start: 'top 70%',
-    //     end: '+=75%',
-    //     animation: uncover,
-    //     scrub: true,
-    // })
-
-    // gsap.to(".panel:not(:last-child)", {
-    //     yPercent: -100,
-    //     ease: "none",
-    //     stagger: 0.5,
-    //     scrollTrigger: {
-    //         trigger: "#container",
-    //         start: "top top",
-    //         end: "+=300%",
-    //         scrub: true,
-    //         pin: true
-    //     }
-    // });
-
-
-    // gsap.set(".panel", { zIndex: (i, target, targets) => targets.length - i });
 })
 
 </script>

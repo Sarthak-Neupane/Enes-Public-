@@ -1,6 +1,8 @@
 <template>
     <Teleport to="body">
-        <component :is="MobileNav" v-if="mobileNav" />
+        <Transition name="nav">
+            <component :is="MobileNav" v-if="mobileNav" @clicked="toggleMobileNav" />
+        </Transition>
     </Teleport>
     <section class="bg-dark text-light lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
@@ -35,9 +37,11 @@
                 </NuxtLink>
             </ul>
         </nav>
-        <div ref="nav" v-else class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
-            <div @click="toggleMobileNav">
-                <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
+        <div v-else>
+            <div ref="nav" class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
+                <div @click="toggleMobileNav">
+                    <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
+                </div>
             </div>
         </div>
         <NuxtPage @change="changeIcon" @default="defaultIcon" />
@@ -135,10 +139,20 @@ const completeAnim = (v) => {
 
 watch(animating, (v) => {
     if (v === false) {
+        console.log('animating in', nav.value)
         gsap.to(nav.value, {
             opacity: 1,
             yPercent: 0,
             y: 0,
+            duration: 1,
+            ease: 'power2.out'
+        })
+    } else {
+        console.log('animating back', nav.value)
+        gsap.to(nav.value, {
+            opacity: 0,
+            yPercent: -100,
+            y: -100,
             duration: 1,
             ease: 'power2.out'
         })
