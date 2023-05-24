@@ -1,19 +1,19 @@
 <template>
-    <Teleport to="body">
-        <Transition name="nav">
-            <component :is="MobileNav" v-show="mobileNav" @clicked="toggleMobileNav" />
-        </Transition>
-    </Teleport>
+    <Transition @before-enter="onBeforeEnter" @enter="onEnter"
+      @before-leave="onBeforeLeave" @leave="onLeave">
+        <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" />
+    </Transition>
     <section class="bg-dark text-light lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
         <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
         <nav ref="nav" v-if="width && width >= 768"
-            class="-translate-y-full opacity-0 w-full bg-transparent mix-blend-difference flex items-center sm:px-9 px-7 h-16 z-50 fixed top-0 left-0" :class="route.path !== '/' ? 'justify-between' : 'justify-end'">
-            <NuxtLink to="/" v-show="route.path !== '/'" >
-                    <h1 data-action="logo" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                        class="flex justify-center items-center gap-3 text-3xl font-bold">
-                        <AnimsAnimLinks text="En." :action="logo" @done="completeAnim('logo')"></AnimsAnimLinks>
+            class="-translate-y-full opacity-0 w-full bg-transparent mix-blend-difference flex items-center sm:px-9 px-7 h-16 z-50 fixed top-0 left-0"
+            :class="route.path !== '/' ? 'justify-between' : 'justify-end'">
+            <NuxtLink to="/" v-show="route.path !== '/'">
+                <h1 data-action="logo" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                    class="flex justify-center items-center gap-3 text-3xl font-bold">
+                    <AnimsAnimLinks text="En." :action="logo" @done="completeAnim('logo')"></AnimsAnimLinks>
                 </h1>
             </NuxtLink>
             <ul class="flex justify-center items-center gap-16 text-md font-medium ">
@@ -58,7 +58,7 @@ const { $gsap: gsap } = useNuxtApp();
 
 const MobileNav = defineAsyncComponent(() => import('~/components/MobileNav.vue'))
 
-const mobileNav = ref(false)    
+const mobileNav = ref(false)
 
 const bodyClass = computed(() => {
     return {
@@ -80,6 +80,7 @@ const route = useRoute();
 
 const { width } = useWindowSize();
 
+const navAction = ref(false)
 
 const action1 = ref(false)
 const action2 = ref(false)
@@ -181,4 +182,53 @@ const changeIcon = (v) => {
 const mouseenterSection = (e) => {
     defaultIcon()
 }
+
+const onBeforeEnter = (el) => {
+    gsap.set(el, {
+        yPercent: -100,
+        y: -100
+    })
+}
+
+const onEnter = (el, done) => {
+    gsap.fromTo(el, {
+        yPercent: -100,
+        y: -100
+    }, {
+        opacity: 1,
+        yPercent: 0,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        onStart: ()=> {
+            navAction.value = true
+        },
+        onComplete: ()=>{
+            done()
+        }
+    })
+}
+
+const onBeforeLeave = (el) => {
+    // gsap.set(el, {
+    //     opacity: 1,
+    //     yPercent: 0,
+    //     y: 0
+    // })
+}
+
+const onLeave = (el, done) => {
+    // gsap.to(el, {
+    //     yPercent: -100,
+    //     y: -100,
+    //     duration: 1,
+    //     ease: 'power2.out',
+    //     onComplete: ()=>{
+    //         done()
+    //     }
+    // })
+    navAction.value = false
+    done()
+}
+
 </script>

@@ -13,7 +13,7 @@
             </AnimsAnimLines>
         </h1>
         <h1 class="w-full py-1 overflow-hidden">
-            <AnimsAnimLines @complete="complete" :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0"
+            <AnimsAnimLines @complete="$emit('complete')" :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0"
                 :y-percent="-100" :animate="true">
                 compelling experiences.
             </AnimsAnimLines>
@@ -42,9 +42,9 @@ const props = defineProps({
     }
 })
 
-const complete = () => {
-    emits('complete')
-}
+// const complete = () => {
+//     emits('complete')
+// }
 
 const Mobile_Headline = ref(null)
 
@@ -57,7 +57,7 @@ watch(() => props.action, (newVal, oldVal) => {
             duration: 0.8,
             ease: 'power4.out',
             onComplete: () => {
-                complete()
+               emits('complete')
             }
         })
     }

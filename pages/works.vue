@@ -29,7 +29,7 @@
             </NuxtLink>
         </div>
     </section>
-    <SectionsFooter class="bg-dark text-light px-2 lg:px-7" />
+    <SectionsFooter class="bg-dark text-light px-2 lg:px-7"  @change="emitIconChange" @default="emitIconDefault" />
 </template>
 
 <script setup>
@@ -70,6 +70,14 @@ onMounted(()=>{
 
 
 const emits = defineEmits(['change', 'default'])
+
+const emitIconChange = (data) => {
+    emits('change', data)
+}
+
+const emitIconDefault = (v) => {
+    emits('default', v)
+}
 
 const getOrder = (v) => {
     if (width.value > 1024) {

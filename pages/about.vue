@@ -44,7 +44,7 @@
             </div>
         </div>
     </section>
-    <SectionsFooter class="text-dark bg-light" />
+    <SectionsFooter class="text-dark bg-light" @change="emitIconChange" @default="emitIconDefault" />
 </template>
 
 <script setup>
@@ -58,6 +58,17 @@ const { width } = useWindowSize();
 const animStore = useHeroAnimStore()
 
 const action = ref(false)
+
+const emits = defineEmits(['change', 'default'])
+
+const emitIconChange = (data) => {
+    emits('change', data)
+}
+
+const emitIconDefault = (v) => {
+    emits('default', v)
+}
+
 
 const proceedOtherAnims = () => {
     
