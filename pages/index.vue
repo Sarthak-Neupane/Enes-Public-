@@ -10,18 +10,23 @@
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
         <SectionsAbout @change="emitIconChange" @default="emitIconDefault"></SectionsAbout>
     </section>
-    <section class="px-2 xl:px-7 bg-light" ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault"></SectionsFooter>
+    <section class="relative min-h-screen h-full">
+        <section class="bg-light rounded-b-2xl px-2 xl:px-7 relative top-0 left-0 w-full h-full z-10 translate-y-0" ref="blogs">
+            <SectionsWorks @change="emitIconChange" @default="emitIconDefault"></SectionsWorks>
+        </section>
+        <section class="h-screen bg-dark px-2 xl:px-7 flex flex-col justify-end items-stretch absolute bottom-0 left-0 z-0 w-full" ref="footer">
+            <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark z-0 h-[70vh]"></SectionsFooter>
+        </section>
     </section>
 </template>
 
 <script setup>
-// import { useWindowSize } from '@vueuse/core';
+import { useWindowSize } from '@vueuse/core';
 import { useHeroAnimStore } from '~/store/heroAnim';
 
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
-// const { width } = useWindowSize();
+const { width } = useWindowSize();
 
 const animStore = useHeroAnimStore()
 
@@ -39,6 +44,7 @@ const hero = ref(null)
 const middle = ref(null)
 const lowerMiddle = ref(null)
 const footer = ref(null)
+const blogs = ref(null)
 
 
 onMounted(() => {
@@ -51,6 +57,19 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
+    gsap.to(blogs.value, {
+        // y: -10,
+        ease: "none",
+        scrollTrigger: {
+            trigger: footer.value,
+            start: "top top",
+            endTrigger: blogs.value,
+            end: "bottom +=40%",
+            pin: footer.value,
+            scrub: true,
+            pinSpacer: true,
+        },
+    })
 })
 
 onBeforeRouteLeave((to, from, next) => {
