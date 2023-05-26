@@ -12,7 +12,7 @@
     </section>
     <section class="relative min-h-screen h-full">
         <section class="bg-light rounded-b-2xl px-2 xl:px-7 relative top-0 left-0 w-full h-full z-10 translate-y-0" ref="blogs">
-            <SectionsWorks @change="emitIconChange" @default="emitIconDefault"></SectionsWorks>
+            <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
         </section>
         <section class="h-screen bg-dark px-2 xl:px-7 flex flex-col justify-end items-stretch absolute bottom-0 left-0 z-0 w-full" ref="footer">
             <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark z-0 h-[70vh]"></SectionsFooter>
@@ -58,13 +58,12 @@ onMounted(() => {
         scrub: true,
     });
     gsap.to(blogs.value, {
-        // y: -10,
         ease: "none",
         scrollTrigger: {
             trigger: footer.value,
             start: "top top",
             endTrigger: blogs.value,
-            end: "bottom +=40%",
+            end: width.value > 1024 ? "bottom top" : "bottom +=40%",
             pin: footer.value,
             scrub: true,
             pinSpacer: true,
