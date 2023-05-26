@@ -75,7 +75,7 @@ onMounted(() => {
             trigger: footer.value,
             start: "top top",
             endTrigger: container.value,
-            end: "bottom +=40%",
+            end: "bottom +=100%",
             pin: footer.value,
             scrub: true,
             pinSpacer: true,
