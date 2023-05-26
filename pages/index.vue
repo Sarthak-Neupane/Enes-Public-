@@ -11,11 +11,15 @@
         <SectionsAbout @change="emitIconChange" @default="emitIconDefault"></SectionsAbout>
     </section>
     <section class="relative min-h-screen h-full">
-        <section class="bg-light rounded-b-2xl px-2 xl:px-7 relative top-0 left-0 w-full h-full z-10 translate-y-0" ref="blogs">
+        <section class="bg-light rounded-b-2xl px-2 xl:px-7 relative top-0 left-0 w-full h-full z-10 translate-y-0"
+            ref="blogs">
             <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
         </section>
-        <section class="h-screen bg-dark px-2 xl:px-7 flex flex-col justify-end items-stretch absolute bottom-0 left-0 z-0 w-full" ref="footer">
-            <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark z-0 h-[70vh]"></SectionsFooter>
+        <section
+            class="h-screen bg-dark px-2 xl:px-7 flex flex-col justify-end items-stretch absolute bottom-0 left-0 z-0 w-full"
+            ref="footer">
+            <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark z-0 h-[70vh]">
+            </SectionsFooter>
         </section>
     </section>
 </template>
@@ -63,12 +67,22 @@ onMounted(() => {
             trigger: footer.value,
             start: "top top",
             endTrigger: blogs.value,
-            end: width.value > 1024 ? "bottom top" : "bottom +=40%",
+            end: "bottom +=40%",
             pin: footer.value,
             scrub: true,
             pinSpacer: true,
         },
     })
+
+    // ScrollTrigger.create({
+    //     trigger: footer.value,
+    //     start: "top top",
+    //     endTrigger: blogs.value,
+    //     end: "bottom 50%",
+    //     pin: footer.value,
+    //     scrub: true,
+    //     pinSpacer: true,
+    // })
 })
 
 onBeforeRouteLeave((to, from, next) => {
