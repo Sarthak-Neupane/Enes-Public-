@@ -1,8 +1,8 @@
 <template>
-    <div class="text-dark py-10 px-2" @mouseenter="$emit('change', {
+    <div class="text-dark bg-light py-10 px-2" @mouseenter="$emit('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: '',
+        color: 'text-light',
         zIndex: 'z-50',
         mixBlend: 'mix-blend-difference'
     })" 
@@ -27,7 +27,7 @@
         </div>
         <div class="w-fit text-left">
             <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter"
-                class="w-fit px-1 py-1 text-xl font-bold relative z-50 mix-blend-difference text-light">
+                class="w-fit px-1 py-1 text-xl font-bold relative z-40 mix-blend-difference text-light">
                 <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>

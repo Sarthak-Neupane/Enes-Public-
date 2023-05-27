@@ -2,7 +2,7 @@
     <div ref="container" class="text-light w-full bg-dark py-10 grid grid-cols-4 rounded-b-lg" @mouseenter="$emit('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: '',
+        color: 'text-light',
         zIndex: 'z-50'
     })">
         <div class="col-span-4 lg:col-span-2 flex flex-col gap-16 justify-center items-start px-2 mb-10">
@@ -44,7 +44,7 @@
             </div>
         </div>
         <NuxtLink to="/about" data-action="action" @mouseenter="mouseenter"
-            class="w-fit px-1 text-xl mt-6 font-bold relative z-50 mix-blend-difference text-light">
+            class="w-fit px-1 text-xl mt-6 font-bold relative z-40 mix-blend-difference text-light">
             <AnimsAnimLinks text="More" :action="hover" @done="completeAnim" :underline="true"></AnimsAnimLinks>
         </NuxtLink>
     </div>

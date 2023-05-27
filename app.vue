@@ -1,14 +1,14 @@
 <template>
     <Transition @before-enter="onBeforeEnter" @enter="onEnter"
       @before-leave="onBeforeLeave" @leave="onLeave">
-        <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" />
+        <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
     </Transition>
-    <section class="bg-dark text-light lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
+    <section class="bg-transparent lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
         <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
         <nav ref="nav" v-if="width && width >= 768"
-            class="-translate-y-full opacity-0 w-full bg-transparent mix-blend-difference flex items-center sm:px-9 px-7 h-16 z-50 fixed top-0 left-0"
+            class="-translate-y-full opacity-0 w-full text-light mix-blend-difference flex items-center sm:px-9 px-7 h-16 z-50 fixed top-0 left-0"
             :class="route.path !== '/' ? 'justify-between' : 'justify-end'">
             <NuxtLink to="/" v-show="route.path !== '/'">
                 <h1 data-action="logo" @mouseenter="mouseenter" @mouseleave="mouseleave"
@@ -38,7 +38,7 @@
             </ul>
         </nav>
         <div v-else>
-            <div ref="nav" class="opacity-0 fixed z-[100] top-3 right-4 mix-blend-difference">
+            <div ref="nav" class="opacity-0 fixed z-[100] top-3 right-4 text-light mix-blend-difference">
                 <div @click="toggleMobileNav">
                     <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
                 </div>

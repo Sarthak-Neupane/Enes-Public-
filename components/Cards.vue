@@ -100,7 +100,7 @@ const mouseenter = () => {
     emits('change', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: '',
+        color: 'text-light',
         zIndex: 'z-50',
         mixBlend: 'mix-blend-normal'
     });
@@ -117,7 +117,7 @@ const mouseleave = () => {
     emits('default', {
         icon: 'radix-icons:dot-filled',
         size: '30px',
-        color: '',
+        color: 'text-light',
         zIndex: 'z-50',
         removeMixBlend: false
     })

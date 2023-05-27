@@ -1,6 +1,6 @@
 <template>
     <section
-        class="min-h-screen max-h-screen h-screen flex flex-col justify-end items-start md:justify-center xl:justify-end px-2 xl:px-7 pb-12"
+        class="bg-dark text-light min-h-screen max-h-screen h-screen flex flex-col justify-end items-start md:justify-center xl:justify-end px-2 xl:px-7 pb-12"
         ref="hero">
         <SectionsHero @change="emitIconChange" @default="emitIconDefault"></SectionsHero>
     </section>
@@ -10,17 +10,12 @@
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
         <SectionsAbout @change="emitIconChange" @default="emitIconDefault"></SectionsAbout>
     </section>
-    <section class="relative min-h-screen h-full">
-        <section class="bg-light rounded-b-2xl px-2 xl:px-7 relative top-0 left-0 w-full h-full z-10 translate-y-0"
-            ref="blogs">
-            <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
-        </section>
-        <section
-            class="h-screen bg-dark px-2 xl:px-7 flex flex-col justify-end items-stretch absolute bottom-0 left-0 z-0 w-full"
-            ref="footer">
-            <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark z-0 h-[70vh]">
-            </SectionsFooter>
-        </section>
+    <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7" ref="blogs">
+        <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
+    </section>
+    <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[-1] relative -mt-[100vh]" ref="footer">
+        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light h-[70vh]">
+        </SectionsFooter>
     </section>
 </template>
 
@@ -61,28 +56,15 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-    gsap.to(blogs.value, {
-        ease: "none",
-        scrollTrigger: {
-            trigger: footer.value,
-            start: "top top",
-            endTrigger: blogs.value,
-            end: "bottom +=100%",
-            pin: footer.value,
-            scrub: true,
-            pinSpacer: true,
-        },
-    })
+    setTimeout(() => {
+        ScrollTrigger.create({
+        trigger: footer.value,
+        pin: true,
+        start: "bottom bottom",
+        end: "+=70%",
+    });
+    }, 500);
 
-    // ScrollTrigger.create({
-    //     trigger: footer.value,
-    //     start: "top top",
-    //     endTrigger: blogs.value,
-    //     end: "bottom 50%",
-    //     pin: footer.value,
-    //     scrub: true,
-    //     pinSpacer: true,
-    // })
 })
 
 onBeforeRouteLeave((to, from, next) => {
