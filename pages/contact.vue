@@ -1,6 +1,6 @@
 <template>
     <section ref="container"
-        class="">
+        class="relative z-10">
         <div class="lg:h-[100vh] h-screen bg-dark text-light px-2 sm:px-9 lg:px-7 pt-10 lg:pt-28 mb-16 lg:mb-0 rounded-b-2xl">
             <div class="col-span-10 grid-flow-row mt-20 mb-10 lg:my-15 overflow-hidden">
                 <h1 class="text-5xl" id="Contact_Headline">Reach Out</h1>
@@ -30,7 +30,7 @@
         </div>
     </section>
     <section
-        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[-1] relative -mt-[100vh]"
+        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
         ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-dark bg-light h-[70vh]">
         </SectionsFooter>
@@ -58,7 +58,7 @@ onMounted(() => {
             trigger: footer.value,
             pin: true,
             start: "bottom bottom",
-            end: "+=70%",
+            end: "+=60%",
         });
     }, 500);
 

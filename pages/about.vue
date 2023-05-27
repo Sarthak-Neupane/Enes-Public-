@@ -55,7 +55,7 @@
         </div>
     </section>
     <section
-        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[-1] relative -mt-[100vh]"
+        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
         ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-dark bg-light h-[70vh]">
         </SectionsFooter>
@@ -95,7 +95,7 @@ onMounted(() => {
             trigger: footer.value,
             pin: true,
             start: "bottom bottom",
-            end: "+=70%",
+            end: "+=60%",
         });
     }, 500);
 })

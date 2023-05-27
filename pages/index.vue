@@ -10,10 +10,10 @@
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
         <SectionsAbout @change="emitIconChange" @default="emitIconDefault"></SectionsAbout>
     </section>
-    <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7" ref="blogs">
+    <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7 z-10 relative" ref="blogs">
         <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
     </section>
-    <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[-1] relative -mt-[100vh]" ref="footer">
+    <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]" ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light h-[70vh]">
         </SectionsFooter>
     </section>
@@ -61,7 +61,7 @@ onMounted(() => {
         trigger: footer.value,
         pin: true,
         start: "bottom bottom",
-        end: "+=70%",
+        end: "+=60%",
     });
     }, 500);
 

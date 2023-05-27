@@ -17,21 +17,21 @@
             <ul class="text-left z-50 relative flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.instagram.com" class="cursor-none relative z-40">
+                    <a href="https://www.instagram.com" class="">
                         <AnimsAnimLinks text="Instagram" :action="instagram" @done="completeAnim('instagram')">
                         </AnimsAnimLinks>
                     </a>
                 </li>
                 <li data-action="twitter" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.twitter.com" class="cursor-none">
+                    <a href="https://www.twitter.com" class="">
                         <AnimsAnimLinks text="Twitter" :action="twitter" @done="completeAnim('twitter')">
                         </AnimsAnimLinks>
                     </a>
                 </li>
                 <li data-action="github" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
-                    <a href="https://www.github.com" class="cursor-none">
+                    <a href="https://www.github.com" class="">
                         <AnimsAnimLinks text="Github" :action="github" @done="completeAnim('github')">
                         </AnimsAnimLinks>
                     </a>
@@ -67,7 +67,7 @@ const switchActions = (action, value) => {
                     icon: 'skill-icons:instagram',
                     size: '20px',
                     color: 'text-dark',
-                    zIndex: 'z-10',
+                    zIndex: 'z-[1]',
                     mixBlend: 'mix-blend-normal'
                 })
             }
@@ -79,7 +79,7 @@ const switchActions = (action, value) => {
                     icon: 'skill-icons:twitter',
                     size: '20px',
                     color: 'text-dark',
-                    zIndex: 'z-10',
+                    zIndex: 'z-[1]',
                     mixBlend: 'mix-blend-normal'
                 })
             }
@@ -91,7 +91,7 @@ const switchActions = (action, value) => {
                     icon: 'skill-icons:github-light',
                     size: '20px',
                     color: 'text-dark',
-                    zIndex: 'z-10',
+                    zIndex: 'z-[1]',
                     mixBlend: 'mix-blend-normal'
                 })
             }
@@ -124,44 +124,4 @@ const mouseleave = (e) => {
 }
 
 const container = ref()
-
-// onMounted(()=>{
-//     ctx.value = gsap.context((self)=>{
-//         const headlineContact = self.selector('#Headline_Contact')
-//         const headlineMail = self.selector('#Headline_Mail')
-//         const footerContact = self.selector('#Footer_Contact')
-
-//         const tl = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: container.value,
-//                 start: 'top 80%',
-//                 // end: 'bottom 20%',
-//             }
-//         })
-
-//         tl.from(headlineContact, {
-//             y: 100,
-//             opacity: 0,
-//             duration: 1,
-//             ease: 'power4.out'
-//         })
-//         .from(headlineMail, {
-//             y: 100,
-//             opacity: 0,
-//             duration: 1,
-//             ease: 'power4.out'
-//         }, '-=0.7')
-//         .from(footerContact, {
-//             opacity: 0,
-//             duration: 1,
-//             ease: 'power4.out'
-//         }, '-=0.5')
-
-//     }, container.value)
-// })
-
-// onUnmounted(() => {
-//     ctx.value.revert()
-// })
-
 </script>

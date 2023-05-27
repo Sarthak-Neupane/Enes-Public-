@@ -1,5 +1,5 @@
 <template>
-    <div ref="cursor" class="pointer-events-none fixed"
+    <div ref="cursor" class="pointer-events-none fixed text-light"
         :class="[zIndex, mixBlend]">
         <div class="h-full w-full">
             <Icon :name="icon" :size="size" :class="color" />
