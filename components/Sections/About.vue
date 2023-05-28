@@ -44,7 +44,7 @@
             </div>
         </div>
         <NuxtLink to="/about" data-action="action" @mouseenter="mouseenter"
-            class="w-fit px-1 text-xl mt-6 font-bold relative z-40 mix-blend-difference text-light">
+            class="w-fit px-1 text-xl mt-6 font-extralight relative z-40 mix-blend-difference text-light">
             <AnimsAnimLinks text="More" :action="hover" @done="completeAnim" :underline="true"></AnimsAnimLinks>
         </NuxtLink>
     </div>

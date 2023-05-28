@@ -4,13 +4,13 @@
         <div class="absolute z-20 top-0 w-full h-full l-0 p-3 md:p-5 lg:p-6 xl:p-7 flex flex-col justify-between items-start rounded-lg"
             ref="card">
             <div class="w-full flex items-center" :class="getTheOrder(1)">
-                <AnimsAnimButton :action="action" :duration="1" :animate="animate" cursorType="cursor-none"
+                <AnimsAnimButton :action="action" :duration="1" :animate="animate" cursorType="cursor-pointer"
                     class=" border-[1px] bg-light text-dark border-solid border-light px-3 text-sm py-1 rounded-md">
                     {{ category }}
                 </AnimsAnimButton>
             </div>
             <div class="text-light w-full">
-                <h2 class="text-3xl xl:text-4xl font-light xl:font-normal w-full overflow-hidden py-1"
+                <h2 class="text-3xl xl:text-4xl font-light w-full overflow-hidden py-1"
                     :class="getTheOrder(2)">
                     <anims-anim-lines :action="action" :duration="1" :yPercent="-100" :opacity="0" :ease="'power2.out'"
                         :animate="animate">

@@ -6,7 +6,7 @@
         zIndex: 'z-50'
     })" ref="container">
         <div class="pt-4">
-            <h1 class="my-4 py-2 font-semibold text-5xl md:text-4xl lg:text-4xl break-words" id="Headline_Contact">Let's
+            <h1 class="my-4 py-2 font-medium text-5xl md:text-4xl lg:text-4xl break-words" id="Headline_Contact">Let's
                 Build Together</h1>
             <h1 class="text-3xl lg:my-8 md:my-5 md:text-5xl lg:text-7xl underline underline-offset-8 font-light max-w-screen-sm lg:max-w-full break-words"
                 id="Headline_Mail">

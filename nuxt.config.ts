@@ -12,8 +12,10 @@ export default defineNuxtConfig({
 
     googleFonts: {
         families: {
-            'Poppins': true,
-            'Montserrat': true,
+            // 'Poppins': true,
+            // 'Montserrat': true,
+            'Inter Tight': true,
+            // 'Inter': true,
         }
     },
 

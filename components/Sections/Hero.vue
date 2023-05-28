@@ -7,7 +7,7 @@
             <AnimsAnimChar :play="play" text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
         </div>
         <div class="my-8 md:my-16 lg:my-6 text-sm relative flex justify-start" ref="group">
-            <p class="lg:font-medium absolute bg-dark px-3 top-0 right-0 -translate-y-1/2 overflow-hidden" ref="movingText">
+            <p class="lg:font-extralight absolute bg-dark px-3 top-0 right-0 -translate-y-1/2 overflow-hidden" ref="movingText">
                 <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0"
                     :y-percent="-100" :animate="true">
                     Designing and Developing Brands
@@ -17,13 +17,13 @@
         </div>
     </div>
     <div class="xl:my-10 xl:pb-10 z-50">
-        <h2 class="text-xl md:text-2xl lg:font-semibold overflow-y-hidden">
+        <h2 class="text-xl md:text-2xl lg:font-light overflow-y-hidden">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
                 Developer Lorem, ipsum.
             </AnimsAnimLines>
         </h2>
-        <p class="mt-3 sm:max-w-lg lg:max-w-md font-light overflow-y-hidden md:text-lg md:mt-5">
+        <p class="font-extralight text-sm mt-3 sm:max-w-lg lg:max-w-md overflow-y-hidden md:text-lg md:mt-5">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
@@ -45,7 +45,7 @@
     </div>
 
     <div v-if="width && width >= 768" class="w-full absolute right-4 bottom-4 flex justify-end lg:justify-end items-center">
-        <ul class="flex flex-col gap-3 font-semibold">
+        <ul class="flex flex-col gap-3">
             <li>
                 <AnimsAnimButton cursor-type="cursor-none" :action="action" :duration="2" :animate="true" @mouseenter="$emit('change', {
                     icon: 'radix-icons:dot-filled',

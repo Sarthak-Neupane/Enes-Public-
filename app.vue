@@ -3,7 +3,7 @@
       @before-leave="onBeforeLeave" @leave="onLeave">
         <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
     </Transition>
-    <section class="bg-transparent lg:cursor-none" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
+    <section class="bg-transparent lg:cursor-none font-['Inter_Tight']" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
         @mouseenter="mouseenterSection">
         <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
@@ -29,10 +29,16 @@
                         <AnimsAnimLinks text="About" :action="action2" @done="completeAnim('action2')"></AnimsAnimLinks>
                     </li>
                 </NuxtLink>
-                <NuxtLink to="/contact">
+                <NuxtLink to="/blogs">
                     <li data-action="action3" @mouseenter="mouseenter" @mouseleave="mouseleave"
                         class="flex justify-center items-center gap-3">
-                        <AnimsAnimLinks text="Contact" :action="action3" @done="completeAnim('action3')"></AnimsAnimLinks>
+                        <AnimsAnimLinks text="Blogs" :action="action3" @done="completeAnim('action3')"></AnimsAnimLinks>
+                    </li>
+                </NuxtLink>
+                <NuxtLink to="/contact">
+                    <li data-action="action4" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                        class="flex justify-center items-center gap-3">
+                        <AnimsAnimLinks text="Contact" :action="action4" @done="completeAnim('action4')"></AnimsAnimLinks>
                     </li>
                 </NuxtLink>
             </ul>
@@ -85,6 +91,7 @@ const navAction = ref(false)
 const action1 = ref(false)
 const action2 = ref(false)
 const action3 = ref(false)
+const action4 = ref(false)
 const logo = ref(false)
 
 const mouseX = ref(0)
@@ -123,6 +130,9 @@ const switchActions = (action, value) => {
             break;
         case 'action3':
             action3.value = value
+            break;
+        case 'action4':
+            action4.value = value
             break;
         default:
             break;

@@ -10,6 +10,9 @@
         <NuxtLink to="/about" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
             About
         </NuxtLink>
+        <NuxtLink to="/blogs" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
+            Blogs
+        </NuxtLink>
         <NuxtLink to="/contact" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
             Contact
         </NuxtLink>

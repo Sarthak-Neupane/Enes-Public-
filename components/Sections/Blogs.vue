@@ -8,28 +8,28 @@
     })" 
     ref="container">
         <div class="overflow-hidden py-1">
-            <h1 class="text-4xl font-light sm:font-semibold sm:w-full w-[12rem]" id="Headline_Blogs">Featured Blogs</h1>
+            <h1 class="text-4xl font-light sm:w-full w-[12rem]" id="Headline_Blogs">Featured Blogs</h1>
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">    
-            <NuxtLink to="/works" class="col-span-1" >
+            <NuxtLink to="/blogs" class="col-span-1" >
                 <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/works" class="col-span-1">
+            <NuxtLink to="/blogs" class="col-span-1">
                 <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageTwo" category="Fashion">
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis provident molestias error consectetur?
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/works" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
+            <NuxtLink to="/blogs" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
                 <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageThree" category="Design">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, aspernatur.
                 </BlogCards>
             </NuxtLink>
         </div>
         <div class="w-fit text-left">
-            <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter"
-                class="w-fit px-1 py-1 text-xl font-bold relative z-40 mix-blend-difference text-light">
+            <NuxtLink to="/blogs" data-action="action" @mouseenter="mouseenter"
+                class="w-fit px-1 py-1 text-xl font-extralight relative z-40 mix-blend-difference text-light">
                 <AnimsAnimLinks text="Blogs" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>

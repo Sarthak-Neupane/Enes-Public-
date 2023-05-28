@@ -21,7 +21,7 @@
                 <h1 class="text-2xl translate-y-full" id="About_Skills_Headline">Everything I've Done</h1>
             </div>
         </div>
-        <div class="col-span-12 lg:col-span-8 lg:pt-24 flex flex-wrap mb-24 lg:mb-36 font-light lg:text-lg"
+        <div class="col-span-12 lg:col-span-8 lg:pt-24 flex flex-wrap mb-24 lg:mb-36 font-extralight lg:text-lg"
             id="About_Skills">
             <Skills title="Prouct Development" class="opacity-0 translate-y-10 About_Skills_Each" />
             <Skills title="Motion Graphics" class="opacity-0 translate-y-10 About_Skills_Each" />

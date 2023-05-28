@@ -1,7 +1,7 @@
 <template>
     <section
         class="pt-20 lg:pt-32 pb-9 px-2 sm:px-5 lg:px-7 bg-light text-dark flex flex-col gap-5 lg:gap-10 relative z-20 rounded-b-2xl">
-        <h1 class="text-2xl sm:text-4xl lg:text-3xl xl:text-5xl py-2 lg:font-semibold overflow-y-hidden">
+        <h1 class="text-2xl sm:text-4xl lg:text-3xl xl:text-5xl py-2 overflow-y-hidden">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true" @complete="revealNav">
                 View All My Works

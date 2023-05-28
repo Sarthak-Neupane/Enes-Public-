@@ -8,18 +8,18 @@
     })" 
     ref="container">
         <div class="overflow-hidden">
-            <h1 class="text-4xl font-light sm:font-semibold sm:w-full w-[12rem]" id="Headline_Work">Featured Works</h1>
+            <h1 class="text-4xl font-light sm:font-normal sm:w-full w-[12rem]" id="Headline_Work">Featured Works</h1>
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">    
-            <NuxtLink to="/works" class="cursor-none col-span-1" >
+            <NuxtLink to="/works" class="col-span-1" >
                 <Cards src="enes/Leonardo_Creative_monochrom_avantgarde_website_portfolio_asymm_2.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)" @change="changeIcon" @default="defaultIcon">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="cursor-none col-span-1">
+            <NuxtLink to="/works" class="col-span-1">
                 <Cards src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_1.jpg" name="Project Two" category="Tech" type="Website" :order="getOrder(2)" @change="changeIcon" @default="defaultIcon">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="cursor-none col-span-1 sm:col-span-2 lg:col-span-1 ">
+            <NuxtLink to="/works" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
                 <Cards class="sm:aspect-video lg:aspect-[3/4]" src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg" name="Project Three" category="Hobby" type="Application"
                     :order="getOrder(3)"  @change="changeIcon" @default="defaultIcon">
                 </Cards>
@@ -27,7 +27,7 @@
         </div>
         <div class="w-fit text-left">
             <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter"
-                class="w-fit px-1 py-1 text-xl font-bold relative z-40 mix-blend-difference text-light">
+                class="w-fit px-1 py-1 text-xl font-extralight relative z-40 mix-blend-difference text-light">
                 <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>
