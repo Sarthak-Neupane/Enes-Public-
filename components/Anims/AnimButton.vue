@@ -1,6 +1,6 @@
 <template>
     <button :class="[getClass, cursorType]" ref="button" class="relative" @mouseenter="mouseenter" @mouseleave="mouseleave">
-        <div class=" pointer-events-none border-[1px] border-solid border-light absolute origin-left scale-x-0 w-full h-full bg-light top-0 left-0 rounded-md mix-blend-difference" ref="background"></div>
+        <div class=" pointer-events-none border-[1px] border-solid border-light absolute origin-left w-full h-full bg-light top-0 left-0 rounded-md mix-blend-difference" :class="scaleOverride ? 'scale-x-[0.05]' : 'scale-x-0'" ref="background"></div>
         <slot></slot>
     </button>
 </template>
@@ -29,6 +29,11 @@ const props = defineProps({
     cursorType: {
         type: String,
         default: false
+    },
+    scaleOverride: {
+        type: Boolean,
+        default: false,
+        required: false
     }
 })
 
@@ -73,7 +78,7 @@ const mouseenter = () => {
 const mouseleave = () => {
     if(width.value < 1024) return
     gsap.to(background.value, {
-        scaleX: 0,
+        scaleX: props.scaleOverride ? 0.05 : 0,
         duration: 1,
         ease: 'expo.out'
     })

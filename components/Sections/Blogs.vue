@@ -7,7 +7,7 @@
         mixBlend: 'mix-blend-difference'
     })" 
     ref="container">
-        <div class="overflow-hidden">
+        <div class="overflow-hidden py-1">
             <h1 class="text-4xl font-light sm:font-semibold sm:w-full w-[12rem]" id="Headline_Blogs">Featured Blogs</h1>
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">    
