@@ -11,15 +11,15 @@
             <h1 class="text-4xl font-light sm:font-normal sm:w-full w-[12rem]" id="Headline_Work">Featured Works</h1>
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">    
-            <NuxtLink to="/works" class="col-span-1" >
+            <NuxtLink to="/works/project1" class="col-span-1" >
                 <Cards src="enes/Leonardo_Creative_monochrom_avantgarde_website_portfolio_asymm_2.jpg" name="Project One" category="Hobby" type="Website" :order="getOrder(1)" @change="changeIcon" @default="defaultIcon">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="col-span-1">
+            <NuxtLink to="/works/project2" class="col-span-1">
                 <Cards src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_1.jpg" name="Project Two" category="Tech" type="Website" :order="getOrder(2)" @change="changeIcon" @default="defaultIcon">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
+            <NuxtLink to="/works/project3" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
                 <Cards class="sm:aspect-video lg:aspect-[3/4]" src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg" name="Project Three" category="Hobby" type="Application"
                     :order="getOrder(3)"  @change="changeIcon" @default="defaultIcon">
                 </Cards>

@@ -4,7 +4,7 @@ module.exports = {
             colors: {
                 'dark': '#0D0D0D',
                 'light': '#F5F4FF',
-                'accent': '#0D9E9E'
+                'accent': '#979797',
             },
             screens: {
                 '3xl': '1800px',

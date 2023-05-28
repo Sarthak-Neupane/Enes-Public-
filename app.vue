@@ -1,10 +1,9 @@
 <template>
-    <Transition @before-enter="onBeforeEnter" @enter="onEnter"
-      @before-leave="onBeforeLeave" @leave="onLeave">
+    <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
         <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
     </Transition>
-    <section class="bg-transparent lg:cursor-none font-['Inter_Tight']" ref="mainSection" v-if="mountedValue" @mousemove="mousemove"
-        @mouseenter="mouseenterSection">
+    <section class="bg-transparent lg:cursor-none font-['Inter_Tight']" ref="mainSection" v-if="mountedValue"
+        @mousemove="mousemove" @mouseenter="mouseenterSection">
         <CursorParent v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size" :z-index="zIndex"
             :color="color" :mix-blend="mixBlend"></CursorParent>
         <nav ref="nav" v-if="width && width >= 768"
@@ -43,14 +42,15 @@
                 </NuxtLink>
             </ul>
         </nav>
-        <div v-else>
-            <div ref="nav" class="opacity-0 fixed z-[100] top-3 right-4 text-light mix-blend-difference">
-                <div @click="toggleMobileNav">
-                    <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
+        <div class="bg-dark" v-else>
+            <div ref="nav" class="-translate-y-full fixed top-0 left-0 w-full z-[100] h-[8vh] px-3 bg-dark flex justify-end items-center text-light">
+                <div @click="toggleMobileNav" class="">
+                    <!-- <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" /> -->
+                    Menu
                 </div>
             </div>
         </div>
-        <NuxtPage @change="changeIcon" @default="defaultIcon" />
+        <NuxtPage @change="changeIcon" @default="defaultIcon" ref="page" />
     </section>
 </template>
 
@@ -98,6 +98,7 @@ const mouseX = ref(0)
 const mouseY = ref(0)
 
 const nav = ref()
+const page = ref()
 
 const icon = ref("radix-icons:dot-filled")
 const size = ref("30px")
@@ -210,10 +211,10 @@ const onEnter = (el, done) => {
         y: 0,
         duration: 1,
         ease: 'power2.out',
-        onStart: ()=> {
+        onStart: () => {
             navAction.value = true
         },
-        onComplete: ()=>{
+        onComplete: () => {
             done()
         }
     })

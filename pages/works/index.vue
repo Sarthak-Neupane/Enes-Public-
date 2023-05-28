@@ -9,27 +9,27 @@
             </AnimsAnimLines>
         </h1>
         <div class="w-full grid gap-5 grid-cols-1 lg:grid-cols-4" ref="container">
-            <NuxtLink to="/works" class="cursor-none col-span-4 relative">
+            <NuxtLink to="/works/project1" class="col-span-4 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/ImageThree.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/One.jpg" name="Project One" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-[2.5/1]')">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="cursor-none col-span-4 lg:col-span-2 relative">
+            <NuxtLink to="/works/project2" class="col-span-4 lg:col-span-2 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/ImageTwo.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Two.jpg" name="Project One" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-square')">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="cursor-none col-span-4 lg:col-span-2 relative">
+            <NuxtLink to="/works/project3" class="col-span-4 lg:col-span-2 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/ImageOne.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Three.jpg" name="Project One" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-square')">
                 </Cards>
             </NuxtLink>
-            <NuxtLink to="/works" class="cursor-none col-span-4 lg:col-span-4 relative">
+            <NuxtLink to="/works/project4" class="col-span-4 lg:col-span-4 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/ImageFour.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Four.jpg" name="Project One" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-[2/1]')">
                 </Cards>
             </NuxtLink>
@@ -138,6 +138,4 @@ onBeforeRouteLeave((to, from, next) => {
     animStore.setAnimating(true)
     next()
 });
-
-
 </script>

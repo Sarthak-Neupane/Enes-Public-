@@ -64,7 +64,6 @@ onMounted(() => {
         end: "+=60%",
     });
     }, 500);
-
 })
 
 onBeforeRouteLeave((to, from, next) => {

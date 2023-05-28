@@ -1,7 +1,7 @@
 <template>
     <BaseWork :props="props" :next-project-props="NextProject">
         <template #Project_Name>
-            Project One
+            Project Two
         </template>
         <template #Project_Description_First_Section>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolorem hic repudiandae impedit
@@ -43,9 +43,10 @@
 </template>
 
 <script setup>
+
 const props = {
     Hero_Image: {
-        src: '/images/Works/One.jpg',
+        src: '/images/Works/Two.jpg',
         alt: 'Image',
     },
     Project_Core_Bullet_Points: {
@@ -77,12 +78,12 @@ const props = {
         },
     },
     Section_Three_Big_Image: {
-        src: '/images/Works/One.jpg',
+        src: '/images/Works/Two.jpg',
         alt: 'Image',
     },
     Double_Section: {
         Image: {
-            src: '/images/Works/Three.jpg',
+            src: '/images/Works/Four.jpg',
             alt: 'Image',
         },
         Credits: {
@@ -107,9 +108,9 @@ const props = {
 }
 
 const NextProject = {
-    link: '/works/project2',
-    Imgsrc: '/images/Works/Two.jpg',
-    name: 'Project Two',
+    link: '/works/project3',
+    Imgsrc: '/images/Works/Three.jpg',
+    name: 'Project Three',
     category: 'Website',
     type: 'Art Direction',
 }
