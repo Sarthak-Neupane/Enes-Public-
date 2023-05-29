@@ -13,10 +13,10 @@
     <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7 z-10 relative" ref="blogs">
         <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
     </section>
-    <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]" ref="footer">
+    <!-- <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]" ref="footer">
         <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light h-[70vh]">
         </SectionsFooter>
-    </section>
+    </section> -->
 </template>
 
 <script setup>
@@ -56,14 +56,14 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-    setTimeout(() => {
-        ScrollTrigger.create({
-        trigger: footer.value,
-        pin: true,
-        start: "bottom bottom",
-        end: "+=60%",
-    });
-    }, 500);
+    // setTimeout(() => {
+    //     ScrollTrigger.create({
+    //     trigger: footer.value,
+    //     pin: true,
+    //     start: "bottom bottom",
+    //     end: "+=60%",
+    // });
+    // }, 500);
 })
 
 onBeforeRouteLeave((to, from, next) => {

@@ -3,7 +3,7 @@
         class="pt-20 lg:pt-32 pb-9 px-2 sm:px-5 lg:px-7 bg-light text-dark flex flex-col gap-5 lg:gap-10 relative z-20 rounded-b-2xl">
         <BlogsHeadline :action="action" @complete="revealNav" class="col-span-9 mb-10"></BlogsHeadline>
         <div class="grid grid-cols-9 place-items-center gap-9" ref="container">
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
+            <NuxtLink to="/blogs/blog1" class="col-span-10 xl:col-span-3 opacity-0" >
                 <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
                 </BlogCards>
@@ -34,12 +34,6 @@
                 </BlogCards>
             </NuxtLink>
         </div>
-    </section>
-    <section
-        class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
-        ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark h-[70vh]">
-        </SectionsFooter>
     </section>
 </template>
 
@@ -82,26 +76,7 @@ const revealNav = () => {
 
 onMounted(() => {
     action.value = true
-    setTimeout(() => {
-        ScrollTrigger.create({
-            trigger: footer.value,
-            pin: true,
-            start: "bottom bottom",
-            end: "+=60%",
-        });
-    }, 500);
 })
-
-
-const emits = defineEmits(['change', 'default'])
-
-const emitIconChange = (data) => {
-    emits('change', data)
-}
-
-const emitIconDefault = (v) => {
-    emits('default', v)
-}
 
 
 onBeforeRouteLeave((to, from, next) => {

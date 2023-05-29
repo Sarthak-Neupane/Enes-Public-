@@ -29,12 +29,6 @@
             </div>
         </div>
     </section>
-    <section
-        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
-        ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-dark bg-light h-[70vh]">
-        </SectionsFooter>
-    </section>
 </template>
 
 <script setup>
@@ -48,20 +42,10 @@ const { width } = useWindowSize();
 const animStore = useHeroAnimStore()
 
 const container = ref()
-const footer = ref()
 
 const ctx = ref()
 
 onMounted(() => {
-    setTimeout(() => {
-        ScrollTrigger.create({
-            trigger: footer.value,
-            pin: true,
-            start: "bottom bottom",
-            end: "+=60%",
-        });
-    }, 500);
-
     ctx.value = gsap.context((self) => {
         const headline = self.selector('#Contact_Headline')
         const form = self.selector('#Contact_Form')
@@ -106,14 +90,4 @@ onBeforeRouteLeave((to, from, next) => {
     animStore.setAnimating(true)
     next()
 });
-
-const emits = defineEmits(['change', 'default'])
-
-const emitIconChange = (data) => {
-    emits('change', data)
-}
-
-const emitIconDefault = (v) => {
-    emits('default', v)
-}
 </script>

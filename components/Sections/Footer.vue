@@ -14,7 +14,7 @@
         </div>
         <div id="Footer_Contact"
             class="mt-8 md:mt-12 lg:mt-14 w-full flex justify-center items-start flex-col md:flex-row md:justify-between gap-4 md:items-end">
-            <ul class="text-left z-50 relative flex flex-col justify-start items-start">
+            <ul class="text-left relative flex flex-col justify-start items-start">
                 <li data-action="instagram" @mouseenter="mouseenter" @mouseleave="mouseleave"
                     class="flex justify-center items-center gap-3">
                     <a href="https://www.instagram.com" class="">

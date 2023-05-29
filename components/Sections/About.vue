@@ -9,13 +9,15 @@
             <div class="overflow-hidden">
                 <h1 class="text-4xl font-medium" id="About_Headline">About Me</h1>
             </div>
-            <p class="text-xl md:text-2xl xl:text-3xl font-light" id="About_Paragraph">Lorem ipsum, dolor sit amet consectetur
+            <p class="text-xl md:text-2xl xl:text-3xl font-light" id="About_Paragraph">Lorem ipsum, dolor sit amet
+                consectetur
                 adipisicing elit. Ex autem magnam reprehenderit tempora nobis neque molestias nesciunt exercitationem
                 perferendis eligendi quis asperiores consectetur odio dicta voluptates, nostrum quaerat. Ut, assumenda.</p>
             <div class="grid grid-cols-4 flex-1 items-center" id="About_More" v-if="width >= 1280">
                 <div class="col-span-1 flex flex-col gap-5">
                     <Experiences title="2022 - 2024" subtitle="Creative Director Basic" class="max-w-[10rem]"></Experiences>
-                    <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA" class="max-w-[10rem]"></Experiences>
+                    <Experiences title="2019 - 2021" subtitle="Senior Digital Designer R/GA" class="max-w-[10rem]">
+                    </Experiences>
                     <Experiences title="2015 - 2016" subtitle="Junior Designer AKQA" class="max-w-[10rem]"></Experiences>
                 </div>
                 <div class="col-span-2">

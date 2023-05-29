@@ -35,12 +35,6 @@
             </NuxtLink>
         </div>
     </section>
-    <section
-        class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
-        ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark h-[70vh]">
-        </SectionsFooter>
-    </section>
 </template>
 
 <script setup>
@@ -56,7 +50,6 @@ const animStore = useHeroAnimStore()
 const action = ref(false)
 const ctx = ref()
 const container = ref(null)
-const footer = ref()
 
 const revealNav = () => {
     console.log('reveal')
@@ -65,14 +58,6 @@ const revealNav = () => {
 
 onMounted(() => {
     action.value = true
-    setTimeout(() => {
-        ScrollTrigger.create({
-            trigger: footer.value,
-            pin: true,
-            start: "bottom bottom",
-            end: "+=60%",
-        });
-    }, 500);
     ctx.value = gsap.context((self) => {
         const cards = self.selector('.cardOverlay')
         gsap.to(cards, {
@@ -87,17 +72,6 @@ onMounted(() => {
         })
     }, container.value)
 })
-
-
-const emits = defineEmits(['change', 'default'])
-
-const emitIconChange = (data) => {
-    emits('change', data)
-}
-
-const emitIconDefault = (v) => {
-    emits('default', v)
-}
 
 const getOrder = (v) => {
     if (width.value > 1024) {

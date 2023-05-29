@@ -93,12 +93,6 @@
             </div>
         </div>
     </section>
-    <section
-        class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
-        ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light bg-dark h-[70vh]">
-        </SectionsFooter>
-    </section>
 </template>
 
 <script setup>
@@ -109,9 +103,6 @@ const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const { width } = useWindowSize();
 const animStore = useHeroAnimStore();
-
-const emits = defineEmits(['change', 'default'])
-
 
 const defProps = defineProps({
     props: {
@@ -128,8 +119,6 @@ const ctx = ref()
 const container = ref(null);
 const hero = ref(null);
 const middle = ref(null);
-const footer = ref(null);
-
 const heroImageOverlay = ref()
 
 onMounted(() => {
@@ -142,14 +131,6 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-    setTimeout(() => {
-        ScrollTrigger.create({
-            trigger: footer.value,
-            pin: true,
-            start: "bottom bottom",
-            end: "+=60%",
-        });
-    }, 500);
     ctx.value = gsap.context((self)=>{
         gsap.to(heroImageOverlay.value, {
             delay: 0.5,
@@ -161,17 +142,6 @@ onMounted(() => {
             }
         })
         const scrollEffectImage = [...self.selector('.scrollEffectImage')]
-        // gsap.to(scrollEffectImage, {
-        //     scale: 0.5,
-        //     transformOrigin: 'center center',
-        //     ease: 'none',
-        //     scrollTrigger: {
-        //         trigger: scrollEffectImage,
-        //         start: 'top 70%',
-        //         end: 'bottom top',
-        //         scrub: true,
-        //     },
-        // })
         scrollEffectImage.forEach((el) => {
             gsap.to(el, {
                 scale: 1,
@@ -187,13 +157,4 @@ onMounted(() => {
         })
     }, container.value)
 })
-
-
-const emitIconChange = (data) => {
-    emits('change', data)
-}
-
-const emitIconDefault = (v) => {
-    emits('default', v)
-}
 </script>

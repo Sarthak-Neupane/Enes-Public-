@@ -54,12 +54,6 @@
             </div>
         </div>
     </section>
-    <section
-        class="bg-light text-dark h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]"
-        ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-dark bg-light h-[70vh]">
-        </SectionsFooter>
-    </section>
 </template>
 
 <script setup>
@@ -74,30 +68,12 @@ const animStore = useHeroAnimStore()
 
 const action = ref(false)
 
-const emits = defineEmits(['change', 'default'])
-
-const emitIconChange = (data) => {
-    emits('change', data)
-}
-
-const emitIconDefault = (v) => {
-    emits('default', v)
-}
-
 const container = ref()
 const footer = ref()
 
 
 onMounted(() => {
     action.value = true
-    setTimeout(() => {
-        ScrollTrigger.create({
-            trigger: footer.value,
-            pin: true,
-            start: "bottom bottom",
-            end: "+=60%",
-        });
-    }, 500);
 })
 
 
