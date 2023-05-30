@@ -1,9 +1,6 @@
 <template>
     <nav class="h-[100lvh] bg-dark text-light flex justify-center flex-col items-start gap-3 text-5xl px-2 sm:px-7 font-normal fixed top-0 left-0 w-full z-50 overflow-hidden"
         ref="nav">
-        <NuxtLink to="/" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
-            Home
-        </NuxtLink>
         <NuxtLink to="/works" @click="toggleMobileNav" class="-translate-y-5 opacity-0">
             Works
         </NuxtLink>

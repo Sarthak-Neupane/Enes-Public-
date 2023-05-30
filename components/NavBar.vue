@@ -37,7 +37,10 @@
     </nav>
     <div class="" v-else>
         <div ref="nav"
-            class="-translate-y-full fixed top-0 left-0 w-full z-[100] h-[8vh] px-3 flex justify-end items-center mix-blend-difference text-light">
+            class="-translate-y-full fixed top-0 left-0 w-full z-[100] h-[8vh] px-3 flex justify-between items-center mix-blend-difference text-light">
+            <NuxtLink to="/" class="flex justify-center items-center gap-3 text-3xl font-bold">
+                En.
+            </NuxtLink>
             <div @click="toggleMobileNav" class="">
                 <Icon name="iconamoon:menu-burger-horizontal" class="w-6 h-6" />
             </div>
