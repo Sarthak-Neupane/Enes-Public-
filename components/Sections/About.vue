@@ -31,16 +31,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-4 lg:col-span-2 relative mb-10">
+        <div class="col-span-4 lg:col-span-2 relative my-10">
             <div class="relative aspect-square flex justify-center items-center">
                 <div class="relative flex justify-center items-center">
                     <nuxt-img src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg"
-                        class="my-0 mx-auto rounded-md sm:w-9/12 lg:w-10/12" fit="contain"> </nuxt-img>
-                    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-0 rounded-md"></div>
+                        class="my-0 mx-auto rounded-md sm:w-9/10 lg:w-10/12 relative z-10" fit="contain"> </nuxt-img>
+                        <nuxt-img src="pattern.svg" class="absolute z-0 top-5 -left-5 xl:-top-7 xl:-left-7 invert w-full h-full rounded-md"></nuxt-img>
                 </div>
                 <div
-                    class="absolute origin-center w-full overflow-hidden text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:mix-blend-difference">
-                    <h1 class="text-8xl sm:text-[11rem] lg:text-[10rem] text-center font-medium whitespace-nowrap translate-x-1/2 lg:translate-x-15"
+                    class="z-20 absolute origin-center w-full overflow-hidden text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-0 left-1/2 lg:mix-blend-difference">
+                    <h1 class="z-20 text-8xl sm:text-[11rem] lg:text-[10rem] text-center whitespace-nowrap translate-x-1/2 lg:translate-x-15 font-black"
                         id="About_Picture_Headline">ABOUT ME</h1>
                 </div>
             </div>

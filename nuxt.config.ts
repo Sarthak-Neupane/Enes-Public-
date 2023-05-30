@@ -14,8 +14,8 @@ export default defineNuxtConfig({
         families: {
             // 'Poppins': true,
             // 'Montserrat': true,
-            'Inter Tight': true,
-            // 'Inter': true,
+            // 'Inter Tight': true,
+            'Inter': true,
         }
     },
 

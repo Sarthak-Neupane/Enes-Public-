@@ -2,7 +2,7 @@
     <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
         <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
     </Transition>
-    <section class="lg:cursor-none font-['Inter_Tight']" :class="getBackgroundColorForBody" ref="mainSection"
+    <section class="lg:cursor-none font-['Inter']" :class="getBackgroundColorForBody" ref="mainSection"
         v-if="mountedValue" @mousemove="mousemove" @mouseenter="mouseenterSection">
         <CursorParent class="z-[1000]" v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size"
             :z-index="zIndex" :color="color" :mix-blend="mixBlend"></CursorParent>
