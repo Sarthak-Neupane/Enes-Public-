@@ -17,19 +17,19 @@
             </NuxtLink>
             <NuxtLink to="/works/project2" class="col-span-4 lg:col-span-2 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/Two.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Two.jpg" name="Project Two" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-square')">
                 </Cards>
             </NuxtLink>
             <NuxtLink to="/works/project3" class="col-span-4 lg:col-span-2 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/Three.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Three.jpg" name="Project Three" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-square')">
                 </Cards>
             </NuxtLink>
             <NuxtLink to="/works/project4" class="col-span-4 lg:col-span-4 relative">
                 <div class="absolute top-0 left-0 bg-light w-full h-full z-50 origin-bottom cardOverlay"></div>
-                <Cards src="/images/Works/Four.jpg" name="Project One" category="Hobby" type="Website"
+                <Cards src="/images/Works/Four.jpg" name="Project Four" category="Hobby" type="Website"
                     :order="getOrder(1)" @change="changeIcon" @default="defaultIcon" :aspect="getAspect('aspect-[2/1]')">
                 </Cards>
             </NuxtLink>
@@ -90,6 +90,8 @@ const getAspect = (v) => {
         return 'aspect-square'
     }
 }
+
+const emits = defineEmits(['change', 'default'])
 
 
 const changeIcon = (v) => {

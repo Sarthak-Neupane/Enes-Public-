@@ -4,7 +4,7 @@
         ref="hero">
         <SectionsHero @change="emitIconChange" @default="emitIconDefault"></SectionsHero>
     </section>
-    <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative" ref="middle">
+    <section class="min-h-screen bg-light rounded-t-2xl px-2 xl:px-7 relative overflow-hidden" ref="middle">
         <SectionsWorks @change="emitIconChange" @default="emitIconDefault"></SectionsWorks>
     </section>
     <section class="bg-dark px-2 xl:px-7" ref="lowerMiddle">
@@ -13,10 +13,6 @@
     <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7 z-10 relative" ref="blogs">
         <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
     </section>
-    <!-- <section class="bg-dark text-light h-screen flex flex-col justify-end items-stretch px-2 xl:px-7 z-[0] relative -mt-[100vh]" ref="footer">
-        <SectionsFooter @change="emitIconChange" @default="emitIconDefault" class="text-light h-[70vh]">
-        </SectionsFooter>
-    </section> -->
 </template>
 
 <script setup>
@@ -56,14 +52,6 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-    // setTimeout(() => {
-    //     ScrollTrigger.create({
-    //     trigger: footer.value,
-    //     pin: true,
-    //     start: "bottom bottom",
-    //     end: "+=60%",
-    // });
-    // }, 500);
 })
 
 onBeforeRouteLeave((to, from, next) => {
