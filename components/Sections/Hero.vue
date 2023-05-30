@@ -17,13 +17,13 @@
         </div>
     </div>
     <div class="xl:my-10 xl:pb-10 z-50">
-        <h2 class="text-xl md:text-2xl lg:font-light overflow-y-hidden">
+        <h2 class="text-xl md:text-2xl font-medium overflow-y-hidden">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
                 Developer Lorem, ipsum.
             </AnimsAnimLines>
         </h2>
-        <p class="font-extralight text-sm mt-3 sm:max-w-lg lg:max-w-md overflow-y-hidden md:text-lg md:mt-5">
+        <p class="font-light text-sm md:text-base mt-3 sm:max-w-lg lg:max-w-md overflow-y-hidden md:mt-5">
             <AnimsAnimLines :action="action" :trigger="{}" :duration="1" ease="power2.out" :opacity="0" :y-percent="-100"
                 :animate="true">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto

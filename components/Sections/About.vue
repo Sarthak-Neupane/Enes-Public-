@@ -40,7 +40,7 @@
                 </div>
                 <div
                     class="z-20 absolute origin-center w-full overflow-hidden text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-0 left-1/2 lg:mix-blend-difference">
-                    <h1 class="z-20 text-8xl sm:text-[11rem] lg:text-[10rem] text-center whitespace-nowrap translate-x-1/2 lg:translate-x-15 font-black"
+                    <h1 class="z-20 text-8xl sm:text-[11rem] lg:text-[10rem] text-center whitespace-nowrap translate-x-1/2 lg:translate-x-15 font-bold"
                         id="About_Picture_Headline">ABOUT ME</h1>
                 </div>
             </div>

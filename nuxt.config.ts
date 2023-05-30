@@ -15,8 +15,12 @@ export default defineNuxtConfig({
             // 'Poppins': true,
             // 'Montserrat': true,
             // 'Inter Tight': true,
-            'Inter': true,
-        }
+            'Inter': [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        },
+        display: 'swap',
+        prefetch: true,
+        preconnect: true,
+        preload: true,
     },
 
     build: {
