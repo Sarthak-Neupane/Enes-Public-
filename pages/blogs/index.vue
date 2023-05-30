@@ -5,32 +5,32 @@
         <div class="grid grid-cols-9 place-items-center gap-9" ref="container">
             <NuxtLink to="/blogs/blog1" class="col-span-10 xl:col-span-3 opacity-0" >
                 <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
+                    The Next Big Thing in Tech
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
+            <NuxtLink to="/blogs/blog2" class="col-span-10 xl:col-span-3 opacity-0" >
+                <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageOne" category="Fashion">
+                    The Ugly Truth About Fashion
+                </BlogCards>
+            </NuxtLink>
+            <NuxtLink to="/blogs/blog3" class="col-span-10 xl:col-span-3 opacity-0" >
+                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageOne" category="Design">
+                    What Would the World Look Like Without Design?
+                </BlogCards>
+            </NuxtLink>
+            <NuxtLink to="/blogs/blog4" class="col-span-10 xl:col-span-3 opacity-0" >
                 <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
+                    This Week's Top Stories About Tech
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
-                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
+            <NuxtLink to="/blogs/blog5" class="col-span-10 xl:col-span-3 opacity-0" >
+                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageOne" category="Fashion">
+                    20 Myths About Fashion: Busted
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
-                <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
-                </BlogCards>
-            </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
-                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
-                </BlogCards>
-            </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-10 xl:col-span-3 opacity-0" >
-                <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
+            <NuxtLink to="/blogs/blog6" class="col-span-10 xl:col-span-3 opacity-0" >
+                <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Design">
+                    Why You're Failing at Design
                 </BlogCards>
             </NuxtLink>
         </div>

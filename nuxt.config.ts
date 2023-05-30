@@ -8,6 +8,7 @@ export default defineNuxtConfig({
          'nuxt-icon',
          '@nuxt/image-edge',
          '@pinia/nuxt',
+         '@nuxt/content'
     ],
 
     googleFonts: {
@@ -31,7 +32,11 @@ export default defineNuxtConfig({
         head:{
             bodyAttrs: {
                 class: 'bg-dark'
-            }
-        }
+            },
+            script: [
+                // <script src="https://myawesome-lib.js"></script>
+                { src: 'https://platform.twitter.com/widgets.js', async: true },
+              ]
+        },
     }
 })

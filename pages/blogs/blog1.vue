@@ -1,21 +1,7 @@
 <template>
-    <section class="pt-20 min-h-screen bg-light">
-
-    </section>
+    <BaseBlog :uniqueIdNumber="1" path="/blog/blog1" title="Blog1" category="Design" date="2020.15.12"
+        cover="/images/Blogs/blog1.jpg"></BaseBlog>
 </template>
 
 <script setup>
-import { useWindowSize } from '@vueuse/core';
-import { useHeroAnimStore } from '~/store/heroAnim';
-
-const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
-
-const { width } = useWindowSize();
-
-const animStore = useHeroAnimStore();
-
-onMounted(()=>{
-    animStore.setAnimating(false)
-})
-
 </script>

@@ -45,9 +45,12 @@ const props = defineProps({
 const overlay = ref()
 const icon = ref()
 
+onMounted(()=>{
+    action.value = true
+})
+
 const mouseenter  = ()=>{
     if(width.value < 1024) return
-    action.value = true
     gsap.to(icon.value, {
         opacity: 1,
         duration: 0.5,
@@ -62,7 +65,6 @@ const mouseenter  = ()=>{
 
 const mouseleave  = ()=>{
     if(width.value < 1024) return
-    action.value = false
     gsap.to(icon.value, {
         opacity: 0,
         duration: 0.5,

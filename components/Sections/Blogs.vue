@@ -11,19 +11,19 @@
             <h1 class="text-4xl font-light sm:w-full w-[12rem]" id="Headline_Blogs">Featured Blogs</h1>
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">    
-            <NuxtLink to="/blogs" class="col-span-1" >
+            <NuxtLink to="/blogs/blog1" class="col-span-1" >
                 <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus repellat repudiandae?
+                    The Next Big Thing in Tech
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-1">
-                <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageTwo" category="Fashion">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis provident molestias error consectetur?
+            <NuxtLink to="/blogs/blog3" class="col-span-1">
+                <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageTwo" category="Design">
+                    What Would the World Look Like Without Design?
                 </BlogCards>
             </NuxtLink>
-            <NuxtLink to="/blogs" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
-                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageThree" category="Design">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, aspernatur.
+            <NuxtLink to="/blogs/blog5" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
+                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageThree" category="Fashion">
+                    20 Myths About Fashion: Busted
                 </BlogCards>
             </NuxtLink>
         </div>

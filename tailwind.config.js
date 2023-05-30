@@ -1,4 +1,8 @@
 module.exports = {
+    plugins: [
+        require('@tailwindcss/typography'),
+        // ...
+      ],
     theme: {
         extend: {
             colors: {
@@ -15,4 +19,6 @@ module.exports = {
             }
         }
     }
+    
 }
+
