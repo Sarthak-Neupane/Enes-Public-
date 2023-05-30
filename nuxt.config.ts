@@ -18,9 +18,9 @@ export default defineNuxtConfig({
             'Inter': [100, 200, 300, 400, 500, 600, 700, 800, 900],
         },
         display: 'swap',
-        prefetch: true,
+        // prefetch: true,
         preconnect: true,
-        preload: true,
+        // preload: true,
     },
 
     build: {

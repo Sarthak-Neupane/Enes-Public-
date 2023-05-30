@@ -36,12 +36,18 @@
                 <div class="relative flex justify-center items-center">
                     <nuxt-img src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg"
                         class="my-0 mx-auto rounded-md sm:w-9/10 lg:w-10/12 relative z-10" fit="contain"> </nuxt-img>
-                        <nuxt-img src="pattern.svg" class="absolute z-0 top-5 -left-5 xl:-top-7 xl:-left-7 invert w-full h-full rounded-md"></nuxt-img>
+                    <nuxt-img src="pattern.svg"
+                        class="absolute z-0 top-5 -left-5 xl:-top-7 xl:-left-7 invert w-full h-full rounded-md"></nuxt-img>
                 </div>
-                <div
+                <!-- <div
                     class="z-20 absolute origin-center w-full overflow-hidden text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-0 left-1/2 lg:mix-blend-difference">
                     <h1 class="z-20 text-8xl sm:text-[11rem] lg:text-[10rem] text-center whitespace-nowrap translate-x-1/2 lg:translate-x-15 font-bold"
                         id="About_Picture_Headline">ABOUT ME</h1>
+                </div> -->
+                <div
+                    class="z-20 absolute origin-center w-full text-light lg:-rotate-90 lg:-translate-x-0 lg:-translate-y-1/2 lg:top-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 top-0 left-1/2 lg:mix-blend-difference flex justify-between items-center overflow-hidden">
+                    <h1 class="About_Text_Loop flex-[0_0_100%] text-8xl sm:text-[11rem] lg:text-[10rem] text-center font-bold flex-nowrap whitespace-nowrap px-3">ABOUT ME</h1>
+                    <h1 class="About_Text_Loop flex-[0 0 100%] text-8xl sm:text-[11rem] lg:text-[10rem] text-center font-bold flex-nowrap whitespace-nowrap px-3">ABOUT ME</h1>
                 </div>
             </div>
         </div>
@@ -56,6 +62,9 @@
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
+
+const loop = ref()
+const loopHeading = ref()
 
 const { $gsap: gsap } = useNuxtApp();
 
@@ -79,12 +88,19 @@ const ctx = ref()
 
 onMounted(() => {
     ctx.value = gsap.context((self) => {
-        const headlineImg = self.selector('#About_Picture_Headline')
-        // const subtitleImg = self.selector('#About_Picture_Subtitle')
+        // const headlineImg = self.selector('#About_Picture_Headline')
+
+        loopHeading.value = self.selector('.About_Text_Loop')
 
         const headline = self.selector('#About_Headline')
         const subtitle = self.selector('#About_Paragraph')
         const more = self.selector('.custom_experiences')
+
+        loop.value = useLooper(loopHeading.value, {
+            repeat: -1,
+            center: true,
+            paddingRigth: 50,
+        })
 
         const timeline = gsap.timeline({
             scrollTrigger: {
@@ -113,22 +129,13 @@ onMounted(() => {
             stagger: 0.05
         }, '-=0.5')
 
-        gsap.to(headlineImg, {
-            duration: 1,
-            xPercent: width.value > 1024 ? -65 : -100,
-            scrollTrigger: {
-                trigger: headlineImg,
-                start: width.value > 1024 ? 'top 70%' : 'top 90%',
-                scrub: true,
-            }
-        })
-        // gsap.to(subtitleImg, {
+        // gsap.to(headlineImg, {
         //     duration: 1,
-        //     xPercent: width.value > 1024 ? -100 : -150,
+        //     xPercent: width.value > 1024 ? -65 : -100,
         //     scrollTrigger: {
-        //         trigger: subtitleImg,
-        //         start: 'top 90%',
-        //         scrub: true
+        //         trigger: headlineImg,
+        //         start: width.value > 1024 ? 'top 70%' : 'top 90%',
+        //         scrub: true,
         //     }
         // })
     }, container.value)
