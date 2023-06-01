@@ -35,7 +35,7 @@
             <div class="relative aspect-square flex justify-center items-center">
                 <div class="relative flex justify-center items-center">
                     <img src="/enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_3.jpg"
-                        class="my-0 mx-auto rounded-md sm:w-9/10 lg:w-10/12 relative z-10" fit="contain" />
+                        class="my-0 mx-auto rounded-md sm:w-9/10 lg:w-10/12 relative z-10 object-contain" />
                     <img src="/pattern.svg"
                         class="absolute z-0 top-5 -left-5 xl:-top-7 xl:-left-7 invert w-full h-full rounded-md" />
                 </div>
