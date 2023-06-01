@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-start items-start" @mouseenter="mouseenter" @mouseleave="mouseleave">
         <div class="relative">
-            <img :src="src" :alt="alt" class="rounded-md object-cover aspect-square xl:aspect-[3/4]" ref="img" >
+            <img :src="src" :alt="alt" class="rounded-md object-cover aspect-square xl:aspect-[3/4]" ref="img" />
             <div class=" absolute h-full w-full bg-gradient-to-b from-[rgba(13,13,13,0.5)] via-transparent to-[rgba(13,13,13,0.5)] top-0 left-0 rounded-md opacity-1 lg:opacity-0"
                 ref="overlay"></div>
             <div class="absolute top-3 right-3 opacity-0" ref="icon">

@@ -8,8 +8,8 @@
                 </h1>
             </div>
             <div class="my-5 overflow-hidden rounded-md">
-                <nuxt-img :src="cover" class="w-full rounded-md scale-110 aspect-square sm:aspect-video object-cover"
-                    id="heroImage"></nuxt-img>
+                <img :src="cover" class="w-full rounded-md scale-110 aspect-square sm:aspect-video object-cover"
+                    id="heroImage" />
             </div>
             <div class="prose">
                 <ContentDoc :path="path" />

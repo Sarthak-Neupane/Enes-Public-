@@ -1,6 +1,6 @@
 <template>
     <div class="relative col-span-1 rounded-lg" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="[aspect]">
-        <nuxt-img :src="src" class="h-full w-full object-cover rounded-lg" />
+        <img :src="src" class="h-full w-full object-cover rounded-lg" />
         <div class="absolute z-20 top-0 w-full h-full l-0 p-3 md:p-5 lg:p-6 xl:p-7 flex flex-col justify-between items-start rounded-lg"
             ref="card">
             <div class="w-full flex items-center" :class="getTheOrder(1)">

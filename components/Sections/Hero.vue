@@ -2,9 +2,9 @@
     <div class="w-full">
         <div
             class="relative z-20 flex flex-col justify-center items-start gap-5 text-7xl font-medium md:mt-10 md:w-full md:flex-row md:justify-center md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[13rem] md:font-bold">
-            <AnimsAnimChar :play="play" text="ENES" class="text-justify flex justify-center items-center gap-[1px]"
-                @done="revealOtherAnims"> </AnimsAnimChar>
-            <AnimsAnimChar :play="play" text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
+                <AnimsAnimChar :play="play" text="ENES" class="text-justify flex justify-center items-center gap-[1px]"
+                    @done="revealOtherAnims"> </AnimsAnimChar>
+                <AnimsAnimChar :play="play" text="YÜKSEK" class="flex justify-center items-center gap-[1px]"> </AnimsAnimChar>
         </div>
         <div class="my-8 md:my-16 lg:my-6 text-sm relative flex justify-start" ref="group">
             <p class="lg:font-extralight absolute bg-dark px-3 top-0 right-0 -translate-y-1/2 overflow-hidden" ref="movingText">

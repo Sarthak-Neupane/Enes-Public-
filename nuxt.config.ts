@@ -1,10 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
-    }
+  nitro:{
+    preset: 'vercel'
   },
   extends: ['nuxt-seo-kit'],
   runtimeConfig: {
