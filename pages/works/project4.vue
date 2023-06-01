@@ -44,6 +44,27 @@
 
 <script setup>
 
+
+useSeoMeta({
+    title: 'Project Four',
+    ogTitle: 'Project Four',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+    ogDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+})
+
+
+defineOgImageStatic({
+    component: 'MyOgImage',
+    title: 'Project Four | ENES YÜKSEK',
+    content: 'Project Four | ENES YÜKSEK',
+    backgroundColor: 'bg-[#0D0D0D]',
+})
+
+definePageMeta({
+    name: 'Project Four',
+})
+
+
 const props = {
     Hero_Image: {
         src: '/images/Works/Four.jpg',

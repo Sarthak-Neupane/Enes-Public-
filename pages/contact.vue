@@ -35,6 +35,28 @@
 import { useWindowSize } from '@vueuse/core';
 import { useHeroAnimStore } from '~/store/heroAnim';
 
+
+
+useSeoMeta({
+   title: 'Contact',
+   ogTitle: 'Contact',
+   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+   ogDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Contact | ENES YÜKSEK',
+   content: 'Contact ENES YÜKSEK',
+   backgroundColor: 'bg-[#0D0D0D]',
+})
+
+definePageMeta({
+   name: 'Contact',
+})
+
+
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const { width } = useWindowSize();

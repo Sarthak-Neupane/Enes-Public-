@@ -13,11 +13,33 @@
     <section class="bg-light rounded-b-2xl overflow-hidden px-2 xl:px-7 z-10 relative" ref="blogs">
         <SectionsBlogs @change="emitIconChange" @default="emitIconDefault"></SectionsBlogs>
     </section>
+
 </template>
 
 <script setup>
 import { useWindowSize } from '@vueuse/core';
 import { useHeroAnimStore } from '~/store/heroAnim';
+
+
+useSeoMeta({
+   title: 'Home',
+   ogTitle: 'Home',
+   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+   ogDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Home | ENES YÜKSEK',
+   content: 'Portfolio Site',
+   backgroundColor: 'bg-[#0D0D0D]',
+})
+
+definePageMeta({
+   name: 'Home',
+})
+
 
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 

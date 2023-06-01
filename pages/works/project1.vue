@@ -43,6 +43,27 @@
 </template>
 
 <script setup>
+
+useSeoMeta({
+    title: 'Project One',
+    ogTitle: 'Project One',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+    ogDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae incidunt nobis asperiores necessitatibus laboriosam totam voluptatum, rem repellendus enim vitae labore, adipisci blanditiis doloremque quisquam, in nostrum laudantium nemo! Totam optio alias perferendis illum praesentium?',
+})
+
+
+defineOgImageStatic({
+    component: 'MyOgImage',
+    title: 'Project One | ENES YÜKSEK',
+    content: 'Project One | ENES YÜKSEK',
+    backgroundColor: 'bg-[#0D0D0D]',
+})
+
+definePageMeta({
+    name: 'Project One',
+})
+
+
 const props = {
     Hero_Image: {
         src: '/images/Works/One.jpg',

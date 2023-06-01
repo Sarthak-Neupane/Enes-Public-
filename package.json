@@ -14,10 +14,13 @@
         "@nuxtjs/google-fonts": "^3.0.0",
         "@nuxtjs/tailwindcss": "^6.6.7",
         "@types/node": "^20",
+        "@unlighthouse/nuxt": "^0.8.7",
         "@vueuse/core": "^10.1.2",
         "@vueuse/nuxt": "^10.1.2",
         "nuxt": "^3.4.3",
-        "nuxt-icon": "^0.4.0"
+        "nuxt-icon": "^0.4.0",
+        "nuxt-seo-kit": "^1.3.8",
+        "sitemap": "^7.1.1"
     },
     "dependencies": {
         "@pinia/nuxt": "^0.4.10",

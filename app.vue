@@ -1,21 +1,24 @@
 <template>
-    <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
-        <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
-    </Transition>
-    <section class="lg:cursor-none font-['Inter']" :class="getBackgroundColorForBody" ref="mainSection"
-        v-if="mountedValue" @mousemove="mousemove" @mouseenter="mouseenterSection">
-        <CursorParent class="z-[1000]" v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size"
-            :z-index="zIndex" :color="color" :mix-blend="mixBlend"></CursorParent>
-        <NavBar @openMobileNav="toggleMobileNav"></NavBar>
-        <section class=" pointer-events-none">
-            <div class="pointer-events-auto relative z-10">
-                <NuxtPage @change="changeIcon" @default="defaultIcon" ref="page" />
-            </div>
-            <SectionsFooter v-if="mountFooter" @change="changeIcon" @default="defaultIcon"
-                class="pointer-events-auto z-0 sticky bottom-0" :class="getColorForFooter">
-            </SectionsFooter>
+    <div>
+        <SeoKit />
+        <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
+            <MobileNav @clicked="toggleMobileNav" v-if="mobileNav" :navAction="navAction" class="z-50" />
+        </Transition>
+        <section class="lg:cursor-none font-['Inter']" :class="getBackgroundColorForBody" ref="mainSection"
+            v-if="mountedValue" @mousemove="mousemove" @mouseenter="mouseenterSection">
+            <CursorParent class="z-[1000]" v-if="width >= 1024" :mouseX="mouseX" :mouseY="mouseY" :icon="icon" :size="size"
+                :z-index="zIndex" :color="color" :mix-blend="mixBlend"></CursorParent>
+            <NavBar @openMobileNav="toggleMobileNav"></NavBar>
+            <section class=" pointer-events-none">
+                <div class="pointer-events-auto relative z-10">
+                    <NuxtPage @change="changeIcon" @default="defaultIcon" ref="page" />
+                </div>
+                <SectionsFooter v-if="mountFooter" @change="changeIcon" @default="defaultIcon"
+                    class="pointer-events-auto z-0 sticky bottom-0" :class="getColorForFooter">
+                </SectionsFooter>
+            </section>
         </section>
-    </section>
+    </div>
 </template>
 
 <script setup>
@@ -23,6 +26,102 @@ import { useWindowSize } from '@vueuse/core';
 import { useHeroAnimStore } from '~/store/heroAnim';
 import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
+
+
+
+useHead({
+  link: [
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "57x57",
+      href: "/favicons/apple-touch-icon-57x57.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "114x114",
+      href: "/favicons/apple-touch-icon-114x114.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "72x72",
+      href: "/favicons/apple-touch-icon-72x72.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "144x144",
+      href: "/favicons/apple-touch-icon-144x144.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "60x60",
+      href: "/favicons/apple-touch-icon-60x60.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "120x120",
+      href: "/favicons/apple-touch-icon-120x120.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "76x76",
+      href: "/favicons/apple-touch-icon-76x76.png",
+    },
+    {
+      rel: "apple-touch-icon-precomposed",
+      sizes: "152x152",
+      href: "/favicons/apple-touch-icon-152x152.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicons/favicon-196x196.png",
+      sizes: "196x196",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicons/favicon-96x96.png",
+      sizes: "96x96",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicons/favicon-32x32.png",
+      sizes: "32x32",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicons/favicon-16x16.png",
+      sizes: "16x16",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicons/favicon-128.png",
+      sizes: "128x128",
+    },
+  ],
+  meta: [
+    { charset: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "msapplication-TileColor", content: "#FFFEFF" },
+    { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
+    { name: "msapplication-square70x70logo", content: "/mstile-70x70.png" },
+    {
+      name: "msapplication-square150x150logo",
+      content: "/favicons/mstile-150x150.png",
+    },
+    {
+      name: "msapplication-wide310x150logo",
+      content: "/favicons/mstile-310x150.png",
+    },
+    {
+      name: "msapplication-square310x310logo",
+      content: "/favicons/mstile-310x310.png",
+    },
+  ],
+})
 
 const { $gsap: gsap } = useNuxtApp();
 
