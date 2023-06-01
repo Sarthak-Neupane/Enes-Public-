@@ -83,55 +83,55 @@ const getAllMetadataArticles = (v) => {
     switch (v) {
         case 1:
             return {
-                title: 'The Next Big Thing in Tech',
+                title: 'Blog One',
                 category: 'Tech',
-                src: '/images/Blogs/Blog1.jpg',
+                src: '/images/Blog/TechOne.jpg',
                 alt: 'BlogImageOne',
                 to: '/blogs/blog1'
             }
         case 2:
             return {
-                title: 'The Ugly Truth About Fashion',
+                title: 'Blog Two',
                 category: 'Fashion',
-                src: '/images/Blogs/Blog2.jpg',
+                src: '/images/Blog/FashionOne.jpg',
                 alt: 'BlogImageTwo',
                 to: '/blogs/blog2'
             }
 
         case 3:
             return {
-                title: 'What Would the World Look Like Without Design?',
+                title: 'Blog Three',
                 category: 'Design',
-                src: '/images/Blogs/Blog3.jpg',
+                src: '/images/Blog/DesignOne.jpg',
                 alt: 'BlogImageThree',
                 to: '/blogs/blog3'
             }
 
         case 4:
             return {
-                title: "This Week's Top Stories About Tech",
+                title: "Blog Four",
                 category: 'Tech',
-                src: '/images/Blogs/Blog1.jpg',
+                src: '/images/Blog/TechTwo.jpg',
                 alt: 'BlogImageThree',
-                to: '/blogs/blog3'
+                to: '/blogs/blog4'
             }
 
         case 5:
             return {
-                title: '20 Myths About Fashion: Busted',
+                title: 'Blog Five',
                 category: 'Fashion',
-                src: '/images/Blogs/Blog2.jpg',
+                src: '/images/Blog/FashionTwo.jpg',
                 alt: 'BlogImageThree',
-                to: '/blogs/blog3'
+                to: '/blogs/blog5'
             }
 
         case 6:
             return {
-                title: "Why You're Failing at Design",
+                title: "Blog Six",
                 category: 'Design',
-                src: '/images/Blogs/Blog3.jpg',
+                src: '/images/Blog/DesignTwo.jpg',
                 alt: 'BlogImageThree',
-                to: '/blogs/blog3'
+                to: '/blogs/blog6'
             }
 
         default:

@@ -27,14 +27,14 @@
         </div>
         <div class="w-fit text-left">
             <NuxtLink to="/works" data-action="action" @mouseenter="mouseenter"
-                class="w-fit px-1 py-1 text-xl font-extralight relative z-40 mix-blend-difference text-light">
+                class="w-fit px-1 py-1 text-xl font-medium relative z-40 mix-blend-difference text-light">
                 <AnimsAnimLinks text="Works" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>
     </div>
 </template>
 
-<script setup>
+<script setup>  
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();

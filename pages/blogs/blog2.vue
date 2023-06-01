@@ -1,6 +1,6 @@
 <template>
     <BaseBlog :uniqueIdNumber="2" path="/blog/blog1" title="Blog Two" category="Fashion" date="2021.15.12"
-        cover="/images/Blogs/Blog2.jpg"></BaseBlog>
+        cover="/images/Blog/FashionOne.jpg"></BaseBlog>
 </template>
 
 <script setup>

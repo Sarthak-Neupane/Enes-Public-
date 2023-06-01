@@ -12,24 +12,24 @@
         </div>
         <div class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">    
             <NuxtLink to="/blogs/blog1" class="col-span-1" >
-                <BlogCards src="/images/Blogs/Blog1.jpg" alt="BlogImageOne" category="Tech">
-                    The Next Big Thing in Tech
+                <BlogCards src="/images/Blog/TechOne.jpg" alt="BlogImageOne" category="Tech">
+                    Blog One
                 </BlogCards>
             </NuxtLink>
             <NuxtLink to="/blogs/blog3" class="col-span-1">
-                <BlogCards src="/images/Blogs/Blog2.jpg" alt="BlogImageTwo" category="Design">
-                    What Would the World Look Like Without Design?
+                <BlogCards src="/images/Blog/DesignOne.jpg" alt="BlogImageTwo" category="Design">
+                   Blog Three
                 </BlogCards>
             </NuxtLink>
             <NuxtLink to="/blogs/blog5" class="col-span-1 sm:col-span-2 lg:col-span-1 ">
-                <BlogCards src="/images/Blogs/Blog3.jpg" alt="BlogImageThree" category="Fashion">
-                    20 Myths About Fashion: Busted
+                <BlogCards src="/images/Blog/FashionTwo.jpg" alt="BlogImageThree" category="Fashion">
+                    Blog Five
                 </BlogCards>
             </NuxtLink>
         </div>
         <div class="w-fit text-left">
             <NuxtLink to="/blogs" data-action="action" @mouseenter="mouseenter"
-                class="w-fit px-1 py-1 text-xl font-extralight relative z-40 mix-blend-difference text-light">
+                class="w-fit px-1 py-1 text-xl font-medium relative z-40 mix-blend-difference text-light">
                 <AnimsAnimLinks text="Blogs" :action="action" @done="completeAnim" :underline="true"></AnimsAnimLinks>
             </NuxtLink>
         </div>
