@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  nitro:{
-    preset: 'vercel'
+  ssr: true,
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
   },
   extends: ['nuxt-seo-kit'],
   runtimeConfig: {
@@ -19,9 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
     'nuxt-icon',
-    '@nuxt/image-edge',
     '@pinia/nuxt',
-    '@nuxt/content',
     [
       '@unlighthouse/nuxt',
       {
@@ -41,8 +42,8 @@ export default defineNuxtConfig({
     },
     display: 'swap',
     // prefetch: true,
-    preconnect: true
-    // preload: true,
+    preconnect: true,
+    preload: true,
   },
 
   build: {

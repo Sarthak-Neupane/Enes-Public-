@@ -11,8 +11,10 @@
                 <img :src="cover" class="w-full rounded-md scale-110 aspect-square sm:aspect-video object-cover"
                     id="heroImage" />
             </div>
-            <div class="prose">
-                <ContentDoc :path="path" />
+            <div class="text-dark flex flex-col gap-5">
+                <slot>
+
+                </slot>
             </div>
             <div class="text-accent text-sm my-10">
                 {{ date }}
@@ -53,10 +55,6 @@ const container = ref(null)
 const props = defineProps({
     uniqueIdNumber: {
         type: Number,
-        required: true
-    },
-    path: {
-        type: String,
         required: true
     },
     title: {
@@ -162,7 +160,7 @@ onMounted(() => {
         relatedArticles.value.push(getAllMetadataArticles(number))
     })
 
-    ctx.value = gsap.context((self)=>{
+    ctx.value = gsap.context((self) => {
         const image = self.selector('#heroImage')
         gsap.to(image, {
             scale: 1,
@@ -181,7 +179,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.prose {
-    max-width: none !important;
+p {
+    margin: 2rem 0 !important;
 }
 </style>

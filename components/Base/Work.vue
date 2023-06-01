@@ -1,9 +1,9 @@
 <template>
     <section class="bg-dark relative z-20" ref="container">
         <div class="h-[80vh] xl:h-screen bg-dark pt-20 pb-10 px-4 sm:px-7 lg:px-9 relative" ref="hero">
-            <nuxt-img :src="props.Hero_Image.src" class="aspect-auto h-full w-full object-cover rounded-md" alt="">
-            </nuxt-img>
-            <div class="absolute top-0 left-0 w-full h-full bg-dark z-10 rounded-md origin-bottom" ref="heroImageOverlay" ></div>
+            <img :src="props.Hero_Image.src" class="aspect-auto h-full w-full object-cover rounded-md" alt="" />
+            <div class="absolute top-0 left-0 w-full h-full bg-dark z-10 rounded-md origin-bottom" ref="heroImageOverlay">
+            </div>
         </div>
         <div class="rounded-b-2xl py-5 xl:py-10 px-4 sm:px-5 lg:px-7 rounded-t-2xl bg-light relative" ref="middle">
             <div class="grid grid-cols-2 gap-5 lg:gap-0">
@@ -31,14 +31,14 @@
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
                 <div class="rounded-md overflow-hidden col-span-2 lg:col-span-1">
-                    <nuxt-img  :src="props.Section_Two_Images.One.src"
-                        class="scrollEffectImage scale-110 lg:aspect-auto h-full w-full object-cover rounded-md"
-                        :alt="props.Section_Two_Images.One.alt"> </nuxt-img>
+                    <img :src="props.Section_Two_Images.One.src"
+                        class="scrollEffectImage scale-110 aspect-square h-full w-full object-cover rounded-md"
+                        :alt="props.Section_Two_Images.One.alt" />
                 </div>
                 <div class="rounded-md overflow-hidden col-span-2 lg:col-span-1">
-                    <nuxt-img  :src="props.Section_Two_Images.Two.src"
-                        class="scrollEffectImage scale-110 lg:aspect-auto h-full w-full object-cover rounded-md"
-                        :alt="props.Section_Two_Images.Two.alt"> </nuxt-img>
+                    <img :src="props.Section_Two_Images.Two.src"
+                        class="scrollEffectImage scale-110 aspect-square h-full w-full object-cover rounded-md"
+                        :alt="props.Section_Two_Images.Two.alt" />
                 </div>
             </div>
             <div class="grid grid-cols-2 mt-8 text-accent">
@@ -51,18 +51,18 @@
             </div>
             <div class="grid grid-cols-2 mt-8 lg:mt-14">
                 <div class="overflow-hidden rounded-md col-span-2">
-                    <nuxt-img  :src="props.Section_Three_Big_Image.src"
+                    <img :src="props.Section_Three_Big_Image.src"
                         class="scrollEffectImage scale-110 aspect-square lg:aspect-[16/8] h-full w-full object-cover rounded-md"
-                        :alt="props.Section_Three_Big_Image.alt">
-                    </nuxt-img>
+                        :alt="props.Section_Three_Big_Image.alt" />
+
                 </div>
             </div>
             <div class="grid grid-cols-2 mt-8 gap-4 2xl:gap-8">
                 <div class="rounded-md overflow-hidden col-span-2 lg:col-span-1">
-                    <nuxt-img  :src="props.Double_Section.Image.src"
+                    <img :src="props.Double_Section.Image.src"
                         class="scrollEffectImage scale-110 aspect-square lg:aspect-[2/2.2] h-full w-full object-cover rounded-md"
-                        :alt="props.Double_Section.Image.alt">
-                    </nuxt-img>
+                        :alt="props.Double_Section.Image.alt" />
+
                 </div>
                 <div class="2xl:max-w-xl col-span-2 lg:col-span-1 flex flex-col justify-between text-accent gap-4">
                     <h2 class="text-2xl mb-3 mt-8 text-dark">
@@ -86,8 +86,9 @@
                     <h1 class="text-4xl xl:text-5xl">Next project</h1>
                 </div>
                 <NuxtLink :to="nextProjectProps.link" class="col-span-2 lg:col-span-1 ">
-                    <Cards class="aspect-square lg:aspect-video" :src="nextProjectProps.Imgsrc" :name="nextProjectProps.name"
-                        :category="nextProjectProps.category" :type="nextProjectProps.type" :order="3">
+                    <Cards class="aspect-square lg:aspect-video" :src="nextProjectProps.Imgsrc"
+                        :name="nextProjectProps.name" :category="nextProjectProps.category" :type="nextProjectProps.type"
+                        :order="3">
                     </Cards>
                 </NuxtLink>
             </div>
@@ -109,7 +110,7 @@ const defProps = defineProps({
         type: Object,
         required: true,
     },
-    nextProjectProps:{
+    nextProjectProps: {
         type: Object,
         required: true,
     }
@@ -131,7 +132,7 @@ onMounted(() => {
         pinSpacing: false,
         scrub: true,
     });
-    ctx.value = gsap.context((self)=>{
+    ctx.value = gsap.context((self) => {
         gsap.to(heroImageOverlay.value, {
             delay: 0.5,
             scaleY: 0,

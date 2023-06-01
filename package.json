@@ -9,8 +9,6 @@
         "postinstall": "nuxt prepare"
     },
     "devDependencies": {
-        "@nuxt/content": "^2.6.0",
-        "@nuxt/image-edge": "^1.0.0-28059208.2abef1b",
         "@nuxtjs/google-fonts": "^3.0.0",
         "@nuxtjs/tailwindcss": "^6.6.7",
         "@types/node": "^20",
@@ -23,6 +21,7 @@
         "sitemap": "^7.1.1"
     },
     "dependencies": {
+        "@nuxt/image-edge": "^1.0.0-28092818.5c21f4c",
         "@pinia/nuxt": "^0.4.10",
         "@tailwindcss/typography": "^0.5.9",
         "gsap": "^3.11.5",

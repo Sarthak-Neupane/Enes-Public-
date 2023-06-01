@@ -90,11 +90,11 @@ const props = {
     },
     Section_Two_Images: {
         One: {
-            src: '/images/Blogs/Blog1.jpg',
+            src: '/images/Blog/TechOne.jpg',
             alt: 'Image',
         },
         Two: {
-            src: '/images/Blogs/Blog3.jpg',
+            src: '/images/Blog/DesignOne.jpg',
             alt: 'Image',
         },
     },

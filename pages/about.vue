@@ -12,8 +12,8 @@
             <div class="relative">
                 <div class="absolute inset-0 w-full h-full bg-dark rounded-md scale-y-1 origin-bottom" id="About_Image">
                 </div>
-                <nuxt-img src="enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_1.jpg"
-                    class="rounded-md object-cover sm:aspect-video lg:aspect-auto"></nuxt-img>
+                <img src="/enes/Leonardo_Diffusion_monochrom_avantgarde_complex_website_portfo_1.jpg"
+                    class="rounded-md object-cover sm:aspect-video lg:aspect-auto" />
             </div>
         </div>
         <div class="col-span-12 lg:col-span-4 mb-12">
