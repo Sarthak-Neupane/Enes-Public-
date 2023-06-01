@@ -9,30 +9,30 @@
             </h1>
         </NuxtLink>
         <ul class="flex justify-center items-center gap-16 text-md font-medium ">
-            <NuxtLink to="/works">
-                <li data-action="action1" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                    class="flex justify-center items-center gap-3">
+            <li data-action="action1" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                class="flex justify-center items-center gap-3">
+                <NuxtLink to="/works">
                     <AnimsAnimLinks text="Works" :action="action1" @done="completeAnim('action1')"></AnimsAnimLinks>
-                </li>
-            </NuxtLink>
-            <NuxtLink to="/about">
-                <li data-action="action2" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                    class="flex justify-center items-center gap-3">
+                </NuxtLink>
+            </li>
+            <li data-action="action2" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                class="flex justify-center items-center gap-3">
+                <NuxtLink to="/about">
                     <AnimsAnimLinks text="About" :action="action2" @done="completeAnim('action2')"></AnimsAnimLinks>
-                </li>
-            </NuxtLink>
-            <NuxtLink to="/blogs">
-                <li data-action="action3" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                    class="flex justify-center items-center gap-3">
+                </NuxtLink>
+            </li>
+            <li data-action="action3" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                class="flex justify-center items-center gap-3">
+                <NuxtLink to="/blogs">
                     <AnimsAnimLinks text="Blogs" :action="action3" @done="completeAnim('action3')"></AnimsAnimLinks>
-                </li>
-            </NuxtLink>
-            <NuxtLink to="/contact">
-                <li data-action="action4" @mouseenter="mouseenter" @mouseleave="mouseleave"
-                    class="flex justify-center items-center gap-3">
+                </NuxtLink>
+            </li>
+            <li data-action="action4" @mouseenter="mouseenter" @mouseleave="mouseleave"
+                class="flex justify-center items-center gap-3">
+                <NuxtLink to="/contact">
                     <AnimsAnimLinks text="Contact" :action="action4" @done="completeAnim('action4')"></AnimsAnimLinks>
-                </li>
-            </NuxtLink>
+                </NuxtLink>
+            </li>
         </ul>
     </nav>
     <div class="" v-else>
